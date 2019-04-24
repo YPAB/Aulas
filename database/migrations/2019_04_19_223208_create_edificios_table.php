@@ -15,6 +15,8 @@ class CreateEdificiosTable extends Migration
     {
         Schema::create('edificios', function (Blueprint $table) {
             $table->bigIncrements('id');
+          
+
             $table->timestamps();
         });
     }
