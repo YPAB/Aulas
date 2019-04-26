@@ -14,7 +14,17 @@ class CreateReservasTable extends Migration
     public function up()
     {
         Schema::create('reservas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('periodo_id')->unsigned();
+            $table->integer('asignatura_id')->unsigned();
+            $table->string('descripcion');
+            $table->date('fecha');
+            $table->string('hora_inicio');
+            $table->string('hora_fin');
+
+
+            $table->date('fecha_claseIni');
+            $table->date('hora_claseInic');
             $table->timestamps();
         });
     }

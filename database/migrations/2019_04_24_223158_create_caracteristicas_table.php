@@ -14,7 +14,8 @@ class CreateCaracteristicasTable extends Migration
     public function up()
     {
         Schema::create('componentes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('nombre')->required();
             $table->timestamps();
         });
     }
