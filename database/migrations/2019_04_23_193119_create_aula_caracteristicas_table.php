@@ -14,7 +14,9 @@ class CreateAulaCaracteristicasTable extends Migration
     public function up()
     {
         Schema::create('aula_caracteristicas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('aula_id')->unsigned();
+            $table->integer('caracteristica_id')->unsigned();
             $table->timestamps();
         });
     }
