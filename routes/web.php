@@ -24,4 +24,6 @@ Route::get('/home', function () {
 });
 
 Route::get('/inicio', 'HomeController@index');
-Route::get('/aulas',  'AulaController@index');
+
+
+Route::resource('/aulas',  'AulaController');

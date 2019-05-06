@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Componente;
-use Illuminate\Http\Request;
 
-class ComponenteController extends Controller
+use Illuminate\Http\Request;
+use App\Models\Caracteristica;
+
+class CaracteristicaController extends Controller
 {
     /**
      * Display a listing of the resource.

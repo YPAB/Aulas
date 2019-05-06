@@ -13,7 +13,7 @@ class CreateCaracteristicasTable extends Migration
      */
     public function up()
     {
-        Schema::create('componentes', function (Blueprint $table) {
+        Schema::create('caracteristicas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre')->required();
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateCaracteristicasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('componentes');
+        Schema::dropIfExists('caracteristicas');
     }
 }
