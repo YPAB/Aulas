@@ -14,7 +14,8 @@ class AulaController extends Controller
      */
     public function index()
     {
-        //
+        $aulas = Aula::orderBy('id', 'DESC');
+        return view('aula.panel', compact('aulas'));
     }
 
     /**
