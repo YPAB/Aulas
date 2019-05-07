@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aula;
+use App\Models\Caracteristica;
 use Illuminate\Http\Request;
 
 class AulaController extends Controller
@@ -37,6 +38,20 @@ class AulaController extends Controller
     public function store(Request $request)
     {
         //
+        
+        $a = new Aula;
+
+        $a->piso_id = $request->piso_id;
+        $a->edificio_id = $request->edificio_id;
+        $a->nombre = $request->nombre;
+        
+        $a->save();
+
+        $c = new Caracteristica();
+        $c->nombre = $request->nombre;
+        $c->save();
+        
+        return redirect(url('aulas'));
     }
 
     /**

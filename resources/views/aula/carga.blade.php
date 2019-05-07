@@ -12,42 +12,42 @@
 			
 					<div class="panel-body">
 						
-			<form>
+			<form action="{{route('aulas.store')}}" method="POST">
+				@csrf
 					  <div class="form-group">
 					    <label for="exampleFormControlInput1">Nombre del Aula </label>
-					    <input type="text" class="form-control">
+					    <input type="text" name="nombre" class="form-control">
 					  </div>
 					  <div class="form-group">
 					    <label for="exampleFormControlSelect1">Edificio</label>
-					    <select class="form-control">
-					      <option>9 de julio</option>
-					      <option> Campus av. Libertad</option>
-					      <option> Campus Facultad de Ingenieria</option>
+					    <select class="form-control" name="edificio_id">
+					      <option value="1">9 de julio</option>
+					      <option value="2"> Campus av. Libertad</option>
+					      <option value="3"> Campus Facultad de Ingenieria</option>
 					    </select>
 					  </div>
 
 					  <div class="form-group">
 					    <label for="exampleFormControlSelect1">Piso</label>
-					    <select class="form-control">
-					      <option>Primer Piso</option>
-					      <option>Segundo Piso</option>
-					      <option> Tercer Piso</option>
+					    <select class="form-control" name="piso_id">
+					      <option value="1">Primer Piso</option>
+					      <option value="2">Segundo Piso</option>
+					      <option value="3"> Tercer Piso</option>
 					    </select>
 					  </div>
 				 <div class="form-group">
 				 	 <label >Caracteristicas</label>
 				 <div class="form-check form-check-inline">
-  						<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  						<input class="form-check-input" name="nombre" type="checkbox" id="inlineCheckbox1" value="Proyector">
   						<label class="form-check-label" for="inlineCheckbox1">Proyector</label>
-  						<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option2">
+  						<input class="form-check-input" name="nombre" type="checkbox" id="inlineCheckbox1" value="pizarra">
   						<label class="form-check-label" for="inlineCheckbox1">Pizarra</label>
-  						<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option3">
+  						<input class="form-check-input" name="nombre" type="checkbox" id="inlineCheckbox1" value="pizarron">
   						<label class="form-check-label" for="inlineCheckbox1">Pizarron</label>
-  						<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option4">
+  						<input class="form-check-input" name="nombre" type="checkbox" id="inlineCheckbox1" value="ventilador">
   						<label class="form-check-label" for="inlineCheckbox1">Ventilador</label>
-  						<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option5">
+  						<input class="form-check-input" name="nombre" type="checkbox" id="inlineCheckbox1" value="aire">
   						<label class="form-check-label" for="inlineCheckbox1">Aire Acondicionado</label>
-
 				</div>
 			</div>
 
