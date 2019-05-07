@@ -27,3 +27,4 @@ Route::get('/inicio', 'HomeController@index');
 
 
 Route::resource('/aulas',  'AulaController');
+Route::resource('/edificios',  'EdificioController');
