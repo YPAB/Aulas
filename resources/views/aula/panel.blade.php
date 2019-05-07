@@ -4,12 +4,11 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 col-md-offset-2">
-
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					Listado de Aulas
-					<a class=" btn btn-sm btn-primary float-right"  href="" >
-						Cargar Aulas
+					<a class=" btn btn-sm btn-primary float-right" href="{{ route('aulas.create') }}" >
+						Cargar Aula
 					</a>
 				</div>
 			
@@ -22,7 +21,6 @@
 									<th >Edificio</th>
 									<th >Piso</th>
 									<th >Caracteristicas</th>
-									<th>Estado</th>
 									<th colspan="3">&nbsp;</th>
 								</tr>
 							</thead>
@@ -32,7 +30,6 @@
 											<td>9 de julio</td>
 											<td>Segundo Piso</td>
 											<td>Ventilador, Proyector, Pizarra</td>
-											<td>Habilitado</td>
 											
 											<td width="10px">
 												<a href="" class="btn btn-sm btn-default">
@@ -69,5 +66,6 @@
 	</div>
 
 </div>
+
 
 @endsection

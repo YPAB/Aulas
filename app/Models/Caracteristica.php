@@ -8,7 +8,7 @@ class Caracteristica extends Model
 {
     protected $table = 'caracteristicas';
     protected $primaryKey = 'id';
-    protected $fillable = [ 'descripcion'];
+    protected $fillable = [ 'nombre'];
     public $timestamps = true;
 
     public function aula(){
