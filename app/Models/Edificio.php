@@ -8,7 +8,7 @@ class Edificio extends Model
 {
     protected $table = 'edificios';
     protected $primaryKey = 'id';
-    protected $fillable = [ 'nombre', 'telefono', 'direccion'];
+    protected $fillable = [ 'nombre'];
     public $timestamps = true;
 
     public function aulas(){

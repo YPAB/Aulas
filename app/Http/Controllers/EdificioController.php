@@ -14,7 +14,8 @@ class EdificioController extends Controller
      */
     public function index()
     {
-        //
+        $edificios = Edificio::orderBy('id', 'DESC');
+        return view('edificio.panel', compact('edificios'));
     }
 
     /**
@@ -24,7 +25,7 @@ class EdificioController extends Controller
      */
     public function create()
     {
-        //
+        return view('edificio.carga');
     }
 
     /**
