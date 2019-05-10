@@ -21,7 +21,7 @@
                                     <div class="links">
                                         {{--  Perfil --}}       
                                         <a class="btn btn-outline-info  btn-lg" role="button"  href="{{ url('/perfil') }}"> 
-                                            {{-- <img src="{{asset('img/perfil.png')}}" width="100" /><br> --}}
+                                            {{-- <img src="{{asset('img/perfil.jpg')}}" width="100" /><br> --}}
                                             <span class="label label-default">Perfil</span></a>
                                             
                                         {{--boton de redireccion a  Aulas --}}
@@ -30,7 +30,7 @@
                                             <span class="label label-default">Aula <i class="fa fa-user" ></i> </span> </a> 
                                             
                                         {{--boton de redireccion a  Edificio --}}
-                                        <a class="btn btn-outline-warning  btn-lg" role="button" href="{{ url('/edificio') }}">
+                                        <a class="btn btn-outline-warning  btn-lg" role="button" href="{{ url('/edificios') }}">
                                             {{-- <img src="{{asset('img/lista.png')}}" width="100" /><br> --}}
                                             <span class="label label-default">Edificio </span> </a>
                                     

@@ -28,7 +28,7 @@ Route::get('/inicio', 'HomeController@index');
 
 Route::resource('/aulas',  'AulaController');
 
-//Route::post( 'aulas/create', 'AulaController@store');
+
 
 Route::resource('/edificios',  'EdificioController');
 
