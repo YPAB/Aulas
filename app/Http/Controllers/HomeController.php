@@ -29,9 +29,13 @@ class HomeController extends Controller
             $request->user()->authorizeRoles(['user', 'admin']);
             return view('admin.inicio');
         }
-        if ( Auth::user()->hasRole('prof')) {
+        elseif ( Auth::user()->hasRole('prof')) {
             $request->user()->authorizeRoles(['user', 'prof']);
             return view('profesor.inicio');
+        }
+        elseif ( Auth::user()->hasRole('prof')) {
+            $request->user()->authorizeRoles(['user', 'bedel']);
+            return view('bedel.inicio');
         }
         
     }
