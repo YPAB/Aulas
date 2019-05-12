@@ -35,21 +35,25 @@
 					      <option value="3"> Tercer Piso</option>
 					    </select>
 					  </div>
+
+
+
 				 <div class="form-group">
-				 	 <label >Caracteristicas</label>
-				 <div class="form-check form-check-inline">
-  						<input class="form-check-input" name="nombre" type="checkbox" id="inlineCheckbox1" value="Proyector">
-  						<label class="form-check-label" for="inlineCheckbox1">Proyector</label>
-  						<input class="form-check-input" name="nombre" type="checkbox" id="inlineCheckbox1" value="pizarra">
-  						<label class="form-check-label" for="inlineCheckbox1">Pizarra</label>
-  						<input class="form-check-input" name="nombre" type="checkbox" id="inlineCheckbox1" value="pizarron">
-  						<label class="form-check-label" for="inlineCheckbox1">Pizarron</label>
-  						<input class="form-check-input" name="nombre" type="checkbox" id="inlineCheckbox1" value="ventilador">
-  						<label class="form-check-label" for="inlineCheckbox1">Ventilador</label>
-  						<input class="form-check-input" name="nombre" type="checkbox" id="inlineCheckbox1" value="aire">
-  						<label class="form-check-label" for="inlineCheckbox1">Aire Acondicionado</label>
+				 	 <label >Caracteristicas Del Aula</label>
+				<div>
+				
+  				<div class="form-check">
+  					
+  					@foreach($caracteristicas as $caracteristica)
+  					<input class="form-check-input" type="checkbox" name="caracteristicas[]" value="{{$caracteristica->id}}">
+  									<label class="form-check-label" for="defaultCheck1">
+    									{{ $caracteristica->nombre }}
+  									</label><br/>
+  				@endforeach
+
 				</div>
 			</div>
+
 
 				<div class="form-group">
 					<a class=" btn btn-light active float-right" href="{{ url('/aulas') }}"> Cancelar </a>

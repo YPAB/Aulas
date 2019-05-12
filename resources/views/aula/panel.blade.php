@@ -7,9 +7,16 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					Listado de Aulas
-					<a class=" btn btn-sm btn-primary float-right" href="{{ route('aulas.create') }}" >
-						Cargar Aula
-					</a>
+					
+						<a class=" btn btn-sm btn-primary float-right" href="{{ route('caracteristicas.index') }}" >
+							Agregar Caracterticas 
+						</a>
+					
+						<a class=" btn btn-sm btn-primary float-right" href="{{ route('aulas.create') }}" >
+							Cargar Aula 
+						</a>
+	
+
 				</div>
 			
 					<div class="panel-body">
@@ -25,12 +32,16 @@
 								</tr>
 							</thead>
 								<tbody>
+									@foreach($aulas as $aula)
+										
 										<tr>
-											<td>Aula 1</td>
+											<td>{{ $aula->nombre }}</td>
 											<td>9 de julio</td>
 											<td>Segundo Piso</td>
-											<td>Ventilador, Proyector, Pizarra</td>
-											
+
+										@foreach($aula->caracteristicas as $caracteristica)
+											<td>{{ $caracteristica->nombre }}</td>
+										@endforeach
 											<td width="10px">
 												<a href="" class="btn btn-sm btn-default">
 													Ver
@@ -51,6 +62,8 @@
 													</button>
 												</td>
 										</tr>
+										@endforeach
+										
 
 								</tbody>
 							

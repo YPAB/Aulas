@@ -9,7 +9,7 @@ class Aula extends Model
    protected $table = 'aulas';
    protected $primaryKey = 'id';
     
-protected $fillable = ['edificio_id','piso_id','aula_caracteristica_id','nombre'];
+protected $fillable = ['edificio_id','piso_id','nombre'];
 
     public $timestamps = true;
 
@@ -21,8 +21,8 @@ protected $fillable = ['edificio_id','piso_id','aula_caracteristica_id','nombre'
     	return $this->belongsTo(Piso::class, 'piso_id','id');
     }
 
-    public function caracteristicas(){
-    	return $this->hasMany(Caracteristica::class);
+     public function caracteristicas(){
+        return $this->belongsToMany(Caracteristica::class);
     }
 
 }

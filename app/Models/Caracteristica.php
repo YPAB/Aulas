@@ -11,8 +11,7 @@ class Caracteristica extends Model
     protected $fillable = [ 'nombre'];
     public $timestamps = true;
 
-    public function aula(){
-    	return $this->belongsTo(Aula::class);
+      public function aulas(){
+    	return $this->belongsToMany(Aula::class);
     }
-
 }

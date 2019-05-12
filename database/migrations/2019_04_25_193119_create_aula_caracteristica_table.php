@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAulaCaracteristicasTable extends Migration
+class CreateAulaCaracteristicaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,21 @@ class CreateAulaCaracteristicasTable extends Migration
      */
     public function up()
     {
-        Schema::create('aula_caracteristicas', function (Blueprint $table) {
+        Schema::create('aula_caracteristica', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('aula_id')->unsigned();
             $table->integer('caracteristica_id')->unsigned();
+
+
             $table->timestamps();
+
+             $table->foreign('aula_id')->references('id')->on('aulas')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
+            $table->foreign('caracteristica_id')->references('id')->on('caracteristicas')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 
@@ -28,6 +38,6 @@ class CreateAulaCaracteristicasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aula_caracteristicas');
+        Schema::dropIfExists('aula_caracteristica');
     }
 }

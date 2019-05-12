@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Caracteristica;
-
+use validate;
 class CaracteristicaController extends Controller
 {
     /**
@@ -15,7 +15,9 @@ class CaracteristicaController extends Controller
      */
     public function index()
     {
-        //
+        $caracteristicas = Caracteristica::all();
+        return view('caracteristica.panel', compact('caracteristicas'));
+        
     }
 
     /**
@@ -25,7 +27,7 @@ class CaracteristicaController extends Controller
      */
     public function create()
     {
-        //
+        return view('caracteristica.carga');
     }
 
     /**
@@ -36,7 +38,13 @@ class CaracteristicaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       // $request->validate(['nombre' => 'required|exists:caracteristicas,nombre|alpha|max:255']);
+
+       $caracteristica = Caracteristica::create(['nombre' => $request['nombre']]);
+         return redirect()->route('caracteristicas.index')
+        ->with('info', 'Caracteristica de un Aula fue creada con exito');
+
+
     }
 
     /**
