@@ -16,7 +16,7 @@
 				@csrf
 					  <div class="form-group">
 					    <label for="exampleFormControlInput1">Nombre del Aula </label>
-					    <input type="text" name="nombre" class="form-control">
+					    <input type="text" name="nombre" class="form-control" required>
 					  </div>
 					  <div class="form-group">
 					    <label for="exampleFormControlSelect1">Edificio</label>

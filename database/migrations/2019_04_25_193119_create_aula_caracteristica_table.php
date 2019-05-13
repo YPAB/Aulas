@@ -20,7 +20,7 @@ class CreateAulaCaracteristicaTable extends Migration
 
 
             $table->timestamps();
-
+            //Relaciones entre tablas 
              $table->foreign('aula_id')->references('id')->on('aulas')
             ->onDelete('cascade')
             ->onUpdate('cascade');
