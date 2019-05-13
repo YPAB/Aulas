@@ -5,17 +5,21 @@
 	<div class="row">
 		<div class="col-md-12 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">
-					Listado de Aulas
-					
+				 <div class="d-flex">
+
+					 <div class="col-md-10">
+
 						<a class=" btn btn-sm btn-primary float-right" href="{{ route('caracteristicas.index') }}" >
 							Agregar Caracterticas 
 						</a>
-					
+					</div>
 						<a class=" btn btn-sm btn-primary float-right" href="{{ route('aulas.create') }}" >
 							Cargar Aula 
 						</a>
-	
+	 				</div>
+				<div class="panel-heading">
+					Listado de Aulas
+					
 
 				</div>
 			
@@ -29,6 +33,9 @@
 									<th >Piso</th>
 									<th >Caracteristicas</th>
 									<th colspan="3">&nbsp;</th>
+									<th >Editar</th>
+									<th >Eliminar</th>
+									
 								</tr>
 							</thead>
 								<tbody>
@@ -41,6 +48,7 @@
 
 										@foreach($aula->caracteristicas as $caracteristica)
 											<td>{{ $caracteristica->nombre }}</td>
+											
 										@endforeach
 											<td width="10px">
 												<a href="" class="btn btn-sm btn-default">
