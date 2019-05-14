@@ -8,7 +8,7 @@
 			<div class="panel panel-default">
 				 <div class="d-flex">
 					{{------ Buscar ------ --}}
-					 <input type="text" name="table_search" class="form-control input-sm float-right" placeholder="Ingresar Aula que desea buscar " >
+					 <input type="text" name="buscar" class="form-control input-sm " placeholder="Ingresar Aula que desea buscar " >
 					  <div class="col-md-3">
                         <button class="btn btn-sl btn-default">Buscar</button>
 					  </div>
