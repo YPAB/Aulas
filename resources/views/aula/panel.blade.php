@@ -3,24 +3,28 @@
 @section('content')
 <div class="container">
 	<div class="row">
+		
 		<div class="col-md-12 col-md-offset-2">
 			<div class="panel panel-default">
 				 <div class="d-flex">
-
-					 <div class="col-md-10">
-
-						<a class=" btn btn-sm btn-primary float-right" href="{{ route('caracteristicas.index') }}" >
-							Agregar Caracterticas 
-						</a>
-					</div>
-						<a class=" btn btn-sm btn-primary float-right" href="{{ route('aulas.create') }}" >
+					{{------ Buscar ------ --}}
+					 <input type="text" name="table_search" class="form-control input-sm float-right" placeholder="Ingresar Aula que desea buscar " >
+					  <div class="col-md-3">
+                        <button class="btn btn-sl btn-default">Buscar</button>
+					  </div>
+					 {{-- -------- Boton de Agregar Aula y Caracteristica -------- --}}
+					 <div class="col-md-4">
+						<a class=" btn btn-sl btn-primary float-right" href="{{ route('aulas.create') }}" >
 							Cargar Aula 
 						</a>
-	 				</div>
+					</div>
+						<a class=" btn btn-sl btn-primary float-right" href="{{ route('caracteristicas.index') }}" >
+							Agregar Caracterticas 
+						</a>
+				</div>
+					<br> {{--  Enter Espacio --- titulo --}}
 				<div class="panel-heading">
-					Listado de Aulas
-					
-
+					<h2>Listado de Aulas</h2>
 				</div>
 			
 					<div class="panel-body">
