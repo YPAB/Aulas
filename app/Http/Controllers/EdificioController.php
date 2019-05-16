@@ -14,7 +14,7 @@ class EdificioController extends Controller
      */
     public function index()
     {
-        $edificios = Edificio::orderBy('id', 'DESC');
+        $edificios = Edificio::all();
         return view('edificio.panel', compact('edificios'));
     }
 
@@ -36,7 +36,10 @@ class EdificioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $a = new Edificio;
+        $a->nombre = $request->nombre;
+        $a->save();
+        return redirect(url('edificios'));
     }
 
     /**
@@ -81,6 +84,8 @@ class EdificioController extends Controller
      */
     public function destroy(Edificio $edificio)
     {
-        //
+        $edificio = Edificio::findOrFail($request->id);
+        $edificio->delete();
+        return redirect(url('/'))->with('status','El Edificio a sido ELIMINADo');
     }
 }

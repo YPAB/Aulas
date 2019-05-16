@@ -17,13 +17,45 @@
 						<table class="table table-striped table-hover">
 							<thead>
 								<tr>
-									<th>Nombre del Edificio</th>
+									<th>Nombre</th>
+									<th>Ver</th>
+									<th>Editar</th>
+									<th>Eliminar</th>
 									
 									<th colspan="3">&nbsp;</th>
+
+
 								</tr>
 							</thead>
 								<tbody>
+									@foreach($edificios as $edificio)
+										
 										<tr>
+											<td>{{ $edificio->nombre }}</td>
+									
+											<td width="10px">
+												<a href="" class="btn btn-sm btn-default">
+													Ver
+												</a>
+
+											</td>
+
+											<td width="10px">
+												<a href="" class="btn btn-sm btn-default">
+													Editar
+												</a>
+
+											</td>
+
+												<td width="10px">
+													<button class="btn btn-sm btn-danger">
+														Eliminar
+													</button>
+												</td>
+										</tr>
+										@endforeach
+										
+										<!-- <tr>
 											
 											<td>9 de julio</td>
 																						
@@ -95,7 +127,7 @@
 													</button>
 												</td>
 										</tr>
-
+ -->
 								</tbody>
 							
 						</table>
