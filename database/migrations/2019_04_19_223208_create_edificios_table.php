@@ -16,7 +16,7 @@ class CreateEdificiosTable extends Migration
         Schema::create('edificios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre')->required();
-
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -4,6 +4,11 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 col-md-offset-2">
+			@if (session('status'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					Listado de Edificios
@@ -13,6 +18,7 @@
 				</div>
 			
 					<div class="panel-body">
+						
 					
 						<table class="table table-striped table-hover">
 							<thead>
@@ -22,7 +28,7 @@
 									<th>Editar</th>
 									<th>Eliminar</th>
 									
-									<th colspan="3">&nbsp;</th>
+									{{-- <th colspan="3">&nbsp;</th> --}}
 
 
 								</tr>
@@ -48,9 +54,8 @@
 											</td>
 
 												<td width="10px">
-													<button class="btn btn-sm btn-danger">
-														Eliminar
-													</button>
+													  <a href="#delete{{ $edificio->id }}"  data-original-title="Remove this user"  title="Eliminar" class="btn  btn-danger btn-sm " data-toggle="modal" role ="button" > Eliminar  <i class="fa fa-trash-o"></i></a>
+													
 												</td>
 										</tr>
 										@endforeach
@@ -72,6 +77,7 @@
 </div>
 
    {{-- ***********************Modal de Edit********************************* --}}
+   	@foreach($edificios as $edificio)
                 <div class="modal fade" id="edit{{ $edificio->id }}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -103,5 +109,33 @@
                     <!-- /.modal-content --> 
                 </div>
                     <!-- /.modal-dialog --> 
+				</div>
+		
+				 {{-- ***********************Modal de Delete********************************* --}}
+                <div class="modal fade" id="delete{{ $edificio->id }}" tabindex="-1" role="dialog" aria-labelledby="eliminar" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h4 class="modal-title custom_align" id="Heading">Eliminar Edificio</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Está seguro que desea Eliminar este Edificio?</div> 
+                        </div>
+                        <div class="modal-footer ">
+                        <form method="post" action="{{ url('edificios/eliminar/'.$edificio->id) }}">
+                                                                        {{ csrf_field() }}
+                                                                        {{ method_field('DELETE') }}
+                                                                    
+                                                   
+                                                
+                            <button  class="btn btn-danger"  type="submit"><span class="fa fa-ok-sign"></span>Si</button></form> 
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><span class="fa fa-remove"></span> No</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content --> 
                 </div>
+                    <!-- /.modal-dialog --> 
+                </div>
+ 	@endforeach	
 @endsection

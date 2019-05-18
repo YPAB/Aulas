@@ -91,10 +91,11 @@ class EdificioController extends Controller
      * @param  \App\Models\Edificio  $edificio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Edificio $edificio)
+    public function destroy( Request $request, $id)
     {
-        $edificio = Edificio::findOrFail($edificio->id);
-        $edificio->delete();
-        return redirect(url('/'))->with('status','El Edificio a sido ELIMINADo');
+
+        $edif = Edificio::findOrFail( $id);
+        $edif->delete();
+        return redirect(url( '/edificios'))->with('status','El Edificio a sido ELIMINADo');
     }
 }

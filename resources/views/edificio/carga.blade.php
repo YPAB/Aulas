@@ -19,11 +19,19 @@
 					    	<input type="text" name="nombre" class="form-control" required>
 					  	</div>
 
-						<div class="form-group">
+					<div class=" text-muted d-flex justify-content-end">
+                        <div class="col-sm-11 input-column">
+                          <a href="{{ url('/') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-light active ">Cancelar</a>  </div>
+                       
+                        <button class="btn btn-primary" type="submit">Siguiente</button>
+					</div>
+					  
+						{{-- <div class="form-group">
 							<a class=" btn btn-light active float-right" href="{{ url('/edificios') }}"> Cancelar </a>
+							 <div class="col-sm-11 input-column">
 							<button type="submit" class="btn btn-primary float-right">Enviar</button>
-
 						</div>
+						</div> --}}
 
 					
 					</form>

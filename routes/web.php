@@ -34,4 +34,5 @@ Route::resource('/caracteristicas',  'CaracteristicaController');
 
 
 Route::resource('/edificios',  'EdificioController');
-Route::put( 'edificios/editar/{id}', 'EdificioController@update');
+Route::put( '/edificios/editar/{id}', 'EdificioController@update');
+Route::delete( '/edificios/eliminar/{id}', 'EdificioController@destroy')->name("eliminaredificio");
