@@ -15,6 +15,7 @@ class EdificioController extends Controller
     public function index()
     {
         $edificios = Edificio::all();
+       
         return view('edificio.panel', compact('edificios'));
     }
 
@@ -62,6 +63,8 @@ class EdificioController extends Controller
     public function edit(Edificio $edificio)
     {
         //
+       
+       
     }
 
     /**
@@ -71,9 +74,15 @@ class EdificioController extends Controller
      * @param  \App\Models\Edificio  $edificio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Edificio $edificio)
+    public function update(Request $request, $id)
     {
         //
+        $edif = Edificio::findOrFail($id);
+        $edif->nombre = $request->nombre;
+        $edif->save();
+
+        return redirect(url('/edificios'));
+       
     }
 
     /**
@@ -84,7 +93,7 @@ class EdificioController extends Controller
      */
     public function destroy(Edificio $edificio)
     {
-        $edificio = Edificio::findOrFail($request->id);
+        $edificio = Edificio::findOrFail($edificio->id);
         $edificio->delete();
         return redirect(url('/'))->with('status','El Edificio a sido ELIMINADo');
     }

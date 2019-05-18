@@ -41,9 +41,9 @@
 											</td>
 
 											<td width="10px">
-												<a href="" class="btn btn-sm btn-default">
-													Editar
-												</a>
+												
+                                              {{-- Boton de Editar --}}
+												 <a href="#edit{{ $edificio->id }}"  data-original-title="Editar Perfil"  title="Editar" class="btn  btn-warning btn-sm " data-toggle="modal" role ="button" > Editar </a>
 
 											</td>
 
@@ -55,79 +55,7 @@
 										</tr>
 										@endforeach
 										
-										<!-- <tr>
-											
-											<td>9 de julio</td>
-																						
-											<td width="10px">
-												<a href="" class="btn btn-sm btn-default">
-													Ver
-												</a>
-
-											</td>
-
-											<td width="10px">
-												<a href="" class="btn btn-sm btn-default">
-													Editar
-												</a>
-
-											</td>
-
-												<td width="10px">
-													<button class="btn btn-sm btn-danger">
-														Eliminar
-													</button>
-												</td>
-										</tr>
-										<tr>
-											
-											<td>Campus av. Libertad</td>
-																						
-											<td width="10px">
-												<a href="" class="btn btn-sm btn-default">
-													Ver
-												</a>
-
-											</td>
-
-											<td width="10px">
-												<a href="" class="btn btn-sm btn-default">
-													Editar
-												</a>
-
-											</td>
-
-												<td width="10px">
-													<button class="btn btn-sm btn-danger">
-														Eliminar
-													</button>
-												</td>
-										</tr>
-										<tr>
-											
-											<td>Campus Facultad de Ingenieria</td>
-																						
-											<td width="10px">
-												<a href="" class="btn btn-sm btn-default">
-													Ver
-												</a>
-
-											</td>
-
-											<td width="10px">
-												<a href="" class="btn btn-sm btn-default">
-													Editar
-												</a>
-
-											</td>
-
-												<td width="10px">
-													<button class="btn btn-sm btn-danger">
-														Eliminar
-													</button>
-												</td>
-										</tr>
- -->
+									
 								</tbody>
 							
 						</table>
@@ -143,5 +71,37 @@
 
 </div>
 
+   {{-- ***********************Modal de Edit********************************* --}}
+                <div class="modal fade" id="edit{{ $edificio->id }}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        
+                            <h4 class="modal-title custom_align" id="Heading">Edit Nombre de Edificio </h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
+                        </div>
+                        <form method="POST" action="{{url('edificios/editar/'.$edificio->id)}}" class="bootstrap-form-with-validation">
+                      {{ csrf_field() }}
+					{{ method_field('PUT') }}
+					@csrf
+                        <div class="modal-body">            
+                            <div class="form-group row">
+                            <label for="usuario" class="col-md-4 col-form-label text-md-center">Nombre del Edificio:</label>
+                                <div class="col-md-6">
+                            <input class="form-control " name="nombre" value="" type="text" placeholder="">
+                                </div>
+                            </div>
+                        
+                        </div>
+                        <div class="modal-footer  ">
 
+							<input type="submit" value="Actualizar " class="btn btn-info btn-lg" style="width: 100%;"></input>						
+							 
+                        </div>
+                    </div>
+                     </form> 
+                    <!-- /.modal-content --> 
+                </div>
+                    <!-- /.modal-dialog --> 
+                </div>
 @endsection

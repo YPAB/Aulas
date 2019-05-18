@@ -34,4 +34,4 @@ Route::resource('/caracteristicas',  'CaracteristicaController');
 
 
 Route::resource('/edificios',  'EdificioController');
-
+Route::put( 'edificios/editar/{id}', 'EdificioController@update');
