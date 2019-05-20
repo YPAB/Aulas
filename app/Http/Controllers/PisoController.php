@@ -14,8 +14,10 @@ class PisoController extends Controller
      */
     public function index()
     {
-        //
+        $pisos = Piso::all();
+        return view('piso.panel', compact('pisos'));
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +26,7 @@ class PisoController extends Controller
      */
     public function create()
     {
-        //
+        return view('piso.carga');
     }
 
     /**
@@ -35,7 +37,10 @@ class PisoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $a = new Piso;
+        $a->nombre = $request->nombre;
+        $a->save();
+        return redirect(url('pisos'));
     }
 
     /**
@@ -67,9 +72,12 @@ class PisoController extends Controller
      * @param  \App\Models\Piso  $piso
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Piso $piso)
+        public function update(Request $request, $id)
     {
-        //
+        $piso = Piso::findOrFail($id);
+        $piso->nombre = $request->nombre;
+        $piso->save();
+        return redirect(url('/pisos'));
     }
 
     /**
@@ -80,6 +88,8 @@ class PisoController extends Controller
      */
     public function destroy(Piso $piso)
     {
-        //
+        $piso = Piso::findOrFail($piso->id);
+        $piso->delete();
+        return redirect(url('/'))->with('status','El Piso a sido ELIMINADO');
     }
 }

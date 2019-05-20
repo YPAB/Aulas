@@ -32,7 +32,12 @@ Route::resource('/aulas',  'AulaController');
 Route::resource('/caracteristicas',  'CaracteristicaController');
 
 
-
+//EDIFICIO
 Route::resource('/edificios',  'EdificioController');
 Route::put( '/edificios/editar/{id}', 'EdificioController@update');
 Route::delete( '/edificios/eliminar/{id}', 'EdificioController@destroy')->name("eliminaredificio");
+
+//PISO
+Route::resource('/pisos',  'PisoController');
+Route::put( '/pisos/editar/{id}', 'PisoController@update');
+Route::delete( '/pisos/eliminar/{id}', 'PisoController@destroy')->name("eliminarpiso");
