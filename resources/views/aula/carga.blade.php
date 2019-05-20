@@ -18,13 +18,15 @@
 					    <label for="exampleFormControlInput1">Nombre del Aula </label>
 					    <input type="text" name="nombre" class="form-control" required>
 					  </div>
+					  
 					  <div class="form-group">
 					    <label for="exampleFormControlSelect1">Edificio</label>
 					    <select class="form-control" name="edificio_id">
-					      <option value="1">9 de julio</option>
-					      <option value="2"> Campus av. Libertad</option>
-					      <option value="3"> Campus Facultad de Ingenieria</option>
+					    	@foreach($edificios as $edificio)
+								 <option value="{{$edificio->id}}">{{ $edificio->nombre }}</option>
+							 @endforeach
 					    </select>
+					  
 					  </div>
 
 					  <div class="form-group">

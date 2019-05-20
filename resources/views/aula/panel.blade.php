@@ -45,9 +45,13 @@
 								<tbody>
 									@foreach($aulas as $aula)
 										
+										
 										<tr>
+
 											<td>{{ $aula->nombre }}</td>
-											<td>9 de julio</td>
+
+											<td>{{ $aula->edificio->nombre }}</td>
+
 											<td>Segundo Piso</td>
 
 										@foreach($aula->caracteristicas as $caracteristica)
@@ -75,7 +79,7 @@
 												</td>
 										</tr>
 										@endforeach
-										
+											@
 
 								</tbody>
 							

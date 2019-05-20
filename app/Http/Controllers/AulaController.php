@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aula;
+use App\Models\Edificio;
 use Illuminate\Http\Request;
 use App\Models\Caracteristica;
 
@@ -17,7 +18,8 @@ class AulaController extends Controller
     {
         $aulas = Aula::all();
         $caracteristicas = Caracteristica::all();
-        return view('aula.panel', compact('aulas','caracteristicas'));
+        $edificios = Edificio::all();
+        return view('aula.panel', compact('aulas','caracteristicas','edificios'));
     }
 
     /**
@@ -29,8 +31,9 @@ class AulaController extends Controller
     {
        // $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id'); 
         $caracteristicas = Caracteristica::orderBy('nombre', 'ASC')->get(); 
+         $edificios = Edificio::orderBy('nombre', 'ASC')->get();
         //return view('admin.posts.create', compact('categories', 'tags'));
-        return view('aula.carga', compact('caracteristicas'));
+        return view('aula.carga', compact('caracteristicas','edificios'));
     }
 
     /**
