@@ -87,9 +87,14 @@ class AulaController extends Controller
      * @param  \App\Models\Aula  $aula
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Aula $aula)
+    public function update(Request $request, $id)
     {
-        //
+            $aula = Aula::findOrFail($id);
+            $aula->fill($request->all())->save();
+
+            $aula->caracteristicas()->sync($request->get('caracteristicas'));
+             return redirect(url('/aulas'));
+
     }
 
     /**
@@ -98,8 +103,10 @@ class AulaController extends Controller
      * @param  \App\Models\Aula  $aula
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Aula $aula)
+    public function destroy($id)
     {
-        //
+         $aula = Aula::findOrFail( $id);
+        $aula->delete();
+        return redirect(url( '/aulas'))->with('status','El Aula fue eliminada con exito');
     }
 }

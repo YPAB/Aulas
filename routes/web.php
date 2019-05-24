@@ -27,6 +27,7 @@ Route::get('/inicio', 'HomeController@index');
 
 
 Route::resource('/aulas',  'AulaController');
+Route::put( '/aulas/editar/{id}', 'EdificioController@update');
 
 
 Route::resource('/caracteristicas',  'CaracteristicaController');
