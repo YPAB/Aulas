@@ -16,7 +16,7 @@
 				@csrf
 					  <div class="form-group">
 					    <label for="exampleFormControlInput1">Nombre de la Caracteristica </label>
-					    <input type="text" name="nombre" class="form-control" required pattern="[A-Za-z]+" title="Texto A-Z y a-z">
+					    <input type="text" name="nombre" class="form-control" required pattern="[A-Za-z 0-9]+" title="Texto A-Z y a-z">
 					  </div>
 					
 
