@@ -14,7 +14,8 @@ class PeriodoController extends Controller
      */
     public function index()
     {
-        //
+        $periodos = Periodo::all();
+        return view('periodo.panel', compact('periodos'));
     }
 
     /**
@@ -24,7 +25,7 @@ class PeriodoController extends Controller
      */
     public function create()
     {
-        //
+        return view('periodo.carga');
     }
 
     /**
@@ -35,7 +36,13 @@ class PeriodoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $a = new Periodo;
+        $a->nombre = $request->nombre;
+        $a->año = $request->año;
+        $a->fecha_inicio = $request->fecha_inicio;
+        $a->fecha_fin = $request->fecha_fin;
+        $a->save();
+        return redirect(url('periodos'));
     }
 
     /**
@@ -67,9 +74,15 @@ class PeriodoController extends Controller
      * @param  \App\Models\Periodo  $periodo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Periodo $periodo)
+    public function update(Request $request, $id)
     {
-        //
+        $period = Periodo::findOrFail($id);
+        $period->nombre = $request->nombre;
+        $period->año = $request->año;
+        $period->fecha_i = $request->fecha_inicio;
+        $period->fecha_f = $request->fecha_fin;
+        $period->save();
+        return redirect(url('/periodos'));
     }
 
     /**
@@ -78,8 +91,10 @@ class PeriodoController extends Controller
      * @param  \App\Models\Periodo  $periodo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Periodo $periodo)
+    public function destroy(Request $request, $id)
     {
-        //
+        $periodo = Periodo::findOrFail( $id);
+        $periodo->delete();
+        return redirect(url( '/periodos'))->with('status','El Periodo a sido ELIMINAD0');
     }
 }

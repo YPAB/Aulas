@@ -42,3 +42,8 @@ Route::delete( '/edificios/eliminar/{id}', 'EdificioController@destroy')->name("
 Route::resource('/pisos',  'PisoController');
 Route::put( '/pisos/editar/{id}', 'PisoController@update');
 Route::delete( '/pisos/eliminar/{id}', 'PisoController@destroy')->name("eliminarpiso");
+
+//PERIODO
+Route::resource('/periodos',  'PeriodoController');
+Route::put( '/periodos/editar/{id}', 'PeriodoController@update');
+Route::delete( '/periodos/eliminar/{id}', 'PeriodoController@destroy')->name("eliminarperiodo");
