@@ -18,9 +18,9 @@
 							Cargar Aula 
 						</a>
 					</div>
-						<a class=" btn btn-sl btn-primary float-right" href="{{ route('caracteristicas.index') }}" >
+						{{-- <a class=" btn btn-sl btn-primary float-right" href="{{ route('caracteristicas.index') }}" >
 							Agregar Caracterticas 
-						</a>
+						</a> --}}
 				</div>
 					<br> {{--  Enter Espacio --- titulo --}}
 				<div class="panel-heading">
@@ -36,7 +36,7 @@
 									<th >Edificio</th>
 									<th >Piso</th>
 									<th >Caracteristicas</th>
-									<th colspan="3">&nbsp;</th>
+									{{-- <th colspan="3">&nbsp;</th> --}}
 									<th >Editar</th>
 									<th >Eliminar</th>
 									
@@ -106,7 +106,7 @@
                         <h4 class="modal-title custom_align" id="Heading">Editar Aula</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
                        </div> 
-			<!-- <form action="{{url('aulas/editar/'.$aula->id)}}" method="POST"> -->
+			
 				<form method="POST" action="{{url('aulas/editar/'.$aula->id)}}" class="bootstrap-form-with-validation">
 					
 					{{ csrf_field() }}
@@ -172,7 +172,7 @@
 
 
 	{{-- ***********************Modal de Delete********************************* --}}
-                <div class="modal fade" id="Eliminar" tabindex="-1" role="dialog" aria-labelledby="eliminar" aria-hidden="true">
+                <div class="modal fade" id="delete{{ $aula->id }}" tabindex="-1" role="dialog" aria-labelledby="eliminar" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">

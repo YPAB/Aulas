@@ -6,7 +6,7 @@ use App\Models\Aula;
 use App\Models\Edificio;
 use Illuminate\Http\Request;
 use App\Models\Caracteristica;
-
+use App\Models\Piso;
 class AulaController extends Controller
 {
     /**
@@ -19,7 +19,8 @@ class AulaController extends Controller
         $aulas = Aula::all();
         $caracteristicas = Caracteristica::all();
         $edificios = Edificio::all();
-        return view('aula.panel', compact('aulas','caracteristicas','edificios'));
+        $pisos = Piso::all();
+        return view('aula.panel', compact('aulas','caracteristicas','edificios','pisos'));
     }
 
     /**
@@ -33,7 +34,8 @@ class AulaController extends Controller
         $caracteristicas = Caracteristica::orderBy('nombre', 'ASC')->get(); 
          $edificios = Edificio::orderBy('nombre', 'ASC')->get();
         //return view('admin.posts.create', compact('categories', 'tags'));
-        return view('aula.carga', compact('caracteristicas','edificios'));
+        $pisos = Piso::all();
+        return view('aula.carga', compact('caracteristicas','edificios','pisos'));
     }
 
     /**

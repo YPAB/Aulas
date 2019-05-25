@@ -19,51 +19,69 @@
 					    <input type="text" name="nombre" class="form-control" required>
 					  </div>
 					  
-					  <div class="form-group">
-					    <label for="exampleFormControlSelect1">Edificio</label>
+					  <div class="form-group row">
+							 <div class="col-12">
+							<label for="exampleFormControlSelect1">Edificio</label>
+							<a class=" btn btn-sm btn-primary float-right" href="{{ route('edificios.create') }}" >
+						<span class="fa fa-plus"></span>	Agregar Edificio 
+						</a>
 					    <select class="form-control" name="edificio_id">
-					    	@foreach($edificios as $edificio)
+							@if ($edificios->count())
+								@foreach($edificios as $edificio)
 								 <option value="{{$edificio->id}}">{{ $edificio->nombre }}</option>
 							 @endforeach
+							 	@else
+									 <option value=""> -  </option>
+							@endif
 					    </select>
-					  
+					   </div>
 					  </div>
 
-					  <div class="form-group">
-					    <label for="exampleFormControlSelect1">Piso</label>
+					  <div class="form-group row">
+							 <div class="col-12">
+							<label for="exampleFormControlSelect1">Piso</label>
+							<a class=" btn btn-sm btn-primary float-right" href="{{ route('pisos.create') }}" >
+						<span class="fa fa-plus"></span>	Agregar Piso 
+						</a>
 					    <select class="form-control" name="piso_id">
-					      <option value="1">Primer Piso</option>
-					      <option value="2">Segundo Piso</option>
-					      <option value="3"> Tercer Piso</option>
-					    </select>
+									@if ($pisos->count())
+									@foreach($pisos as $piso)
+									 <option value="{{$piso->id}}">{{ $piso->nombre }}</option>
+									@endforeach
+										@else
+									 <option value=""> -  </option>
+							@endif
+							</select>
+							
+							 </div>
 					  </div>
-
-
-
-				 <div class="form-group">
-				 	 <label >Caracteristicas Del Aula</label>
-				<div>
-				
-  				<div class="form-check">
-  					
-  					@foreach($caracteristicas as $caracteristica)
-  					<input class="form-check-input" type="checkbox" name="caracteristicas[]" value="{{$caracteristica->id}}">
-  									<label class="form-check-label" for="defaultCheck1">
-    									{{ $caracteristica->nombre }}
-  									</label><br/>
-  				@endforeach
-
+ 												
+			<div class="form-group row">
+				<div class="col-12">
+						<label >Caracteristicas Del Aula</label>
+						<a class=" btn btn-sm btn-primary float-right" href="{{ route('caracteristicas.index') }}" >
+						<span class="fa fa-plus"></span>	Agregar Caracterticas 
+						</a>
+						<div class="form-check">
+							@if ($caracteristicas->count())
+								@foreach($caracteristicas as $caracteristica)	
+								<input class="form-check-input" type="checkbox" name="caracteristicas[]" value="{{$caracteristica->id}}">
+												<label class="form-check-label" for="defaultCheck1">	 
+													{{ $caracteristica->nombre }}
+												</label><br/>
+								@endforeach
+							@else
+								No hay caracteristica   
+							@endif
+						</div>
 				</div>
 			</div>
 
-
 				<div class="form-group">
 					<a class=" btn btn-light active float-right" href="{{ url('/aulas') }}"> Cancelar </a>
-					<button type="submit" class="btn btn-primary float-right">Enviar</button>
-
+					<button type="submit" class="btn btn-primary float-right">Enviar</butto>
 				</div>
-
-					
+				
 			</form>
 					</div>
 					

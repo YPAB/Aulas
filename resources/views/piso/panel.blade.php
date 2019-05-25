@@ -34,7 +34,7 @@
 								</tr>
 							</thead>
 								<tbody>
-									@foreach($pisos as $pisos)
+									@foreach($pisos as $piso)
 										
 										<tr>
 											<td>{{ $piso->nombre }}</td>
@@ -55,7 +55,7 @@
 											</td>
 
 												<td width="10px">
-													  <a href="#delete{{ $edificio->id }}"  data-original-title="Remove this user"  title="Eliminar" class="btn  btn-danger btn-sm " data-toggle="modal" role ="button" > Eliminar  <i class="fa fa-trash-o"></i></a>
+													  <a href="#delete{{$piso->id}}"  data-original-title="Remove this user"  title="Eliminar" class="btn  btn-danger btn-sm " data-toggle="modal" role ="button" > Eliminar  <i class="fa fa-trash-o"></i></a>
 													
 												</td>
 										</tr>
@@ -128,7 +128,7 @@
                                                                         {{ csrf_field() }}
                                                                         {{ method_field('DELETE') }}
                                                                     
-                                                   
+                                                   @csrf
                                                 
                             <button  class="btn btn-danger"  type="submit"><span class="fa fa-ok-sign"></span>Si</button></form> 
                             <button type="button" class="btn btn-default" data-dismiss="modal"><span class="fa fa-remove"></span> No</button>

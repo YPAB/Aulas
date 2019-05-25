@@ -86,10 +86,10 @@ class PisoController extends Controller
      * @param  \App\Models\Piso  $piso
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Piso $piso)
+    public function destroy( Request $request, $id)
     {
-        $piso = Piso::findOrFail($piso->id);
+        $piso = Piso::findOrFail($id);
         $piso->delete();
-        return redirect(url('/'))->with('status','El Piso a sido ELIMINADO');
+        return redirect(url('/pisos'))->with('status','El Piso a sido ELIMINADO');
     }
 }
