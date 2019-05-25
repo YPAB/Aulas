@@ -89,11 +89,17 @@ class AulaController extends Controller
      */
     public function update(Request $request, $id)
     {
-            $aula = Aula::findOrFail($id);
+            /*$aula = Aula::findOrFail($id);
             $aula->fill($request->all())->save();
 
             $aula->caracteristicas()->sync($request->get('caracteristicas'));
-             return redirect(url('/aulas'));
+             return redirect(url('/aulas'));*/
+
+        $aula = Aula::findOrFail($id);
+        $aula->nombre = $request->nombre;
+        $aula->save();
+
+        return redirect(url('/aulas'));
 
     }
 

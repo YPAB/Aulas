@@ -76,14 +76,9 @@
 													
 												</td>
 										</tr>
-<<<<<<< HEAD
-										@endforeach
-											
-=======
-										
-									@endforeach
->>>>>>> 0291958a8dd175f94c1c4cf0a34ed9d0f4a2d061
 
+										@endforeach
+									
 								</tbody>
 							
 						</table>
@@ -102,14 +97,18 @@
 
 {{-- ***********************Modal de Edit********************************* --}}
    	@foreach($aulas as $aula)
-                <div class="modal fade" id="edit{{ $aula->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+                <!-- <div class="modal fade" id="edit{{ $aula->id }}" tabindex="-1" role="dialog" aria-hidden="true"> -->
+                <div class="modal fade" id="edit{{ $aula->id }}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                         <h4 class="modal-title custom_align" id="Heading">Editar Aula</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
                        </div> 
-			<form action="{{url('aulas/editar/'.$aula->id)}}" method="POST">
+			<!-- <form action="{{url('aulas/editar/'.$aula->id)}}" method="POST"> -->
+				<form method="POST" action="{{url('aulas/editar/'.$aula->id)}}" class="bootstrap-form-with-validation">
+					
 					{{ csrf_field() }}
 					{{ method_field('PUT') }}
 					@csrf

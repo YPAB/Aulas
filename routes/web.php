@@ -27,8 +27,8 @@ Route::get('/inicio', 'HomeController@index');
 
 
 Route::resource('/aulas',  'AulaController');
-Route::put( '/aulas/editar/{id}', 'EdificioController@update');
-
+Route::put( '/aulas/editar/{id}', 'AulaController@update');
+Route::delete( '/aulas/eliminar/{id}', 'AulaController@destroy')->name("eliminaraula");
 
 Route::resource('/caracteristicas',  'CaracteristicaController');
 
