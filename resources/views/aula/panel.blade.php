@@ -44,26 +44,25 @@
 							</thead>
 								<tbody>
 									@foreach($aulas as $aula)
-										
-										
 										<tr>
-
 											<td>{{ $aula->nombre }}</td>
-
-											<td>{{ $aula->edificio->nombre }}</td>
-
-											<td>Segundo Piso</td>
+											@foreach ($edificios as $edificio )
+														<td>{{ $edificio->nombre }}</td>
+											@endforeach
+											@foreach ( $pisos as $piso )
+													<td>{{ $piso->nombre }}</td>
+											@endforeach
 
 										@foreach($aula->caracteristicas as $caracteristica)
 											<td>{{ $caracteristica->nombre }}</td>
 											
 										@endforeach
-											<td width="10px">
+											{{-- <td width="10px">
 												<a href="" class="btn btn-sm btn-default">
 													Ver
 												</a>
 
-											</td>
+											</td> --}}
 
 											<td width="10px">
 												
@@ -72,10 +71,12 @@
 											</td>
 
 												<td width="10px">
-													  <a href="#delete{{ $aula->id }}"  data-original-title="Remove this user"  title="Eliminar" data-target="#Eliminar" class="btn  btn-danger btn-sm " data-toggle="modal" role ="button" > Eliminar  <i class="fa fa-trash-o"></i></a>
+													  <a href="#delete{{ $aula->id }}"  data-original-title="Remove this user"  title="Eliminar" class="btn  btn-danger btn-sm " data-toggle="modal" role ="button" > Eliminar  <i class="fa fa-trash-o"></i></a>
 													
 												</td>
 										</tr>
+										
+
 
 										@endforeach
 									
@@ -97,7 +98,7 @@
 
 {{-- ***********************Modal de Edit********************************* --}}
    	@foreach($aulas as $aula)
-                <!-- <div class="modal fade" id="edit{{ $aula->id }}" tabindex="-1" role="dialog" aria-hidden="true"> -->
+               
                 <div class="modal fade" id="edit{{ $aula->id }}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 
                 <div class="modal-dialog">
@@ -115,7 +116,7 @@
                         <div class="modal-body">            
                            <div class="form-group">
 					    <label for="exampleFormControlInput1">Nombre del Aula </label>
-					    <input type="text" name="nombre" class="form-control" required>
+					    <input type="text" name="nombre" class="form-control" value="{{$aula->nombre}}">
 					  </div>
 					  
 					  <div class="form-group">
@@ -131,9 +132,9 @@
 					  <div class="form-group">
 					    <label for="exampleFormControlSelect1">Piso</label>
 					    <select class="form-control" name="piso_id">
-					      <option value="1">Primer Piso</option>
-					      <option value="2">Segundo Piso</option>
-					      <option value="3"> Tercer Piso</option>
+					      	@foreach($pisos as $piso)
+								 <option value="{{$piso->id}}">{{ $piso->nombre }}</option>
+							 @endforeach
 					    </select>
 					  </div>
 
@@ -146,8 +147,8 @@
   				<div class="form-check">
   					
   					@foreach($caracteristicas as $caracteristica)
-  					<input class="form-check-input" type="checkbox" name="caracteristicas[]" value="{{$caracteristica->id}}">
-  									<label class="form-check-label" for="defaultCheck1">
+  					<input class="form-check-input" type="checkbox" name="caracteristicas[]" value="{{$caracteristica->id}}" >
+  									<label class="form-check-label" for="defaultCheck1" >
     									{{ $caracteristica->nombre }}
   									</label><br/>
   				@endforeach
@@ -171,7 +172,9 @@
 			</div>
 
 
-	{{-- ***********************Modal de Delete********************************* --}}
+		</div>
+
+		{{-- ***********************Modal de Delete********************************* --}}
                 <div class="modal fade" id="delete{{ $aula->id }}" tabindex="-1" role="dialog" aria-labelledby="eliminar" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -180,14 +183,14 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
                         </div>
                         <div class="modal-body">
-                        <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> ¿Está seguro que desea Eliminar el Aula?</div> 
+                        <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Está seguro que desea Eliminar El Aula?</div> 
                         </div>
                         <div class="modal-footer ">
-                        <form method="post" action="{{ url('aulas.destroy'.$aula->id) }}">
-                                      {{ csrf_field() }}
-                                      {{ method_field('DELETE') }}
+                        <form method="post" action="{{ url('aulas/eliminar/'.$aula->id) }}">
+                                                                        {{ csrf_field() }}
+                                                                        {{ method_field('DELETE') }}
                                                                     
-                                                   
+                                                   	@csrf
                                                 
                             <button  class="btn btn-danger"  type="submit"><span class="fa fa-ok-sign"></span>Si</button></form> 
                             <button type="button" class="btn btn-default" data-dismiss="modal"><span class="fa fa-remove"></span> No</button>
@@ -197,9 +200,6 @@
                 </div>
                     <!-- /.modal-dialog --> 
                 </div>
-
-
-
 
 
 		@endforeach	
