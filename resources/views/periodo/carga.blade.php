@@ -21,17 +21,17 @@
 
 					  	<div class="form-group">
 					    	<label for="exampleFormControlInput1">Año </label>
-					    	<input type="text" name="año" class="form-control" required>
+					    	<input type="number" name="ano" class="form-control"  step="1" min="0" max="9999" placeholder="AAAA" required>
 					  	</div>
 
 					  	<div class="form-group">
 					    	<label for="exampleFormControlInput1">Fecha de Inicio</label>
-					    	<input type="text" name="fecha_inicio" class="form-control" required>
+					    	<input type="date" name="fecha_inicio" class="form-control" required>
 					  	</div>
 
 					  	<div class="form-group">
 					    	<label for="exampleFormControlInput1">Fecha de Fin </label>
-					    	<input type="text" name="fecha_fin" class="form-control" required>
+					    	<input type="date" name="fecha_fin" class="form-control" required>
 					  	</div>
 
 					<div class=" text-muted d-flex justify-content-end">

@@ -38,7 +38,7 @@ class PeriodoController extends Controller
     {
         $a = new Periodo;
         $a->nombre = $request->nombre;
-        $a->año = $request->año;
+        $a->ano = $request->ano;
         $a->fecha_inicio = $request->fecha_inicio;
         $a->fecha_fin = $request->fecha_fin;
         $a->save();
@@ -78,9 +78,9 @@ class PeriodoController extends Controller
     {
         $period = Periodo::findOrFail($id);
         $period->nombre = $request->nombre;
-        $period->año = $request->año;
-        $period->fecha_i = $request->fecha_inicio;
-        $period->fecha_f = $request->fecha_fin;
+        $period->ano = $request->ano;
+        $period->fecha_inicio = $request->fecha_inicio;
+        $period->fecha_fin= $request->fecha_fin;
         $period->save();
         return redirect(url('/periodos'));
     }

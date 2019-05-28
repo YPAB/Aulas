@@ -37,9 +37,7 @@
 											<td>{{ $periodo->nombre }}</td>
 									
 											<td width="10px">
-												<a href="" class="btn btn-sm btn-default">
-													Ver
-												</a>
+											 <a href="#ver{{ $periodo->id }}"  data-original-title="Ver Periodo"  title="Ver" class="btn  btn-primary btn-sm " data-toggle="modal" role ="button" > Ver </a>
 
 											</td>
 
@@ -73,14 +71,59 @@
 
 </div>
 
-   {{-- ***********************Modal de Edit********************************* --}}
-   	@foreach($periodos as $periodo)
+   
+       @foreach($periodos as $periodo)
+        {{-- ***********************Modal de ver********************************* --}}
+                <div class="modal fade" id="ver{{ $periodo->id }}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        
+                            <h4 class="modal-title custom_align" id="Heading">Ver Periodo </h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
+                        </div>
+                        
+                        <div class="modal-body">            
+                            <div class="form-group ">
+                            <label for="usuario" >Nombre del Periodo:</label>
+                                
+                               {{$periodo->nombre}}
+                                
+                            </div>
+                            	<div class="form-group">
+					    	<label for="exampleFormControlInput1">Año </label>
+					    	{{$periodo->ano}}
+					  	</div>
+
+					  	<div class="form-group">
+					    	<label for="exampleFormControlInput1">Fecha de Inicio</label>
+					    	{{$periodo->fecha_inicio}}
+					  	</div>
+
+					  	<div class="form-group">
+					    	<label for="exampleFormControlInput1">Fecha de Fin </label>
+					    	{{$periodo->fecha_fin}}
+					  	</div>
+                        
+                        </div>
+                        <div class="modal-footer  ">
+
+											
+							 
+                        </div>
+                    </div>
+                    
+                    <!-- /.modal-content --> 
+                </div>
+                    <!-- /.modal-dialog --> 
+				</div>
+  {{-- ***********************Modal de editar********************************* --}}
                 <div class="modal fade" id="edit{{ $periodo->id }}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                         
-                            <h4 class="modal-title custom_align" id="Heading">Edit Nombre del Periodo </h4>
+                            <h4 class="modal-title custom_align" id="Heading">Edit Periodo </h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
                         </div>
                         <form method="POST" action="{{url('periodos/editar/'.$periodo->id)}}" class="bootstrap-form-with-validation">
@@ -91,9 +134,23 @@
                             <div class="form-group row">
                             <label for="usuario" class="col-md-4 col-form-label text-md-center">Nombre del Periodo:</label>
                                 <div class="col-md-6">
-                            <input class="form-control " name="nombre" value="" type="text" placeholder="">
+                                <input class="form-control " name="nombre" value="{{$periodo->nombre}}" type="text" placeholder="">
                                 </div>
                             </div>
+                            	<div class="form-group">
+					    	<label for="exampleFormControlInput1">Año </label>
+					    	<input type="number" name="ano" class="form-control"  step="1" min="0" max="9999" placeholder="AAAA" value="{{$periodo->ano}}">
+					  	</div>
+
+					  	<div class="form-group">
+					    	<label for="exampleFormControlInput1">Fecha de Inicio</label>
+					    	<input type="date" name="fecha_inicio" class="form-control" value="{{$periodo->fecha_inicio}}">
+					  	</div>
+
+					  	<div class="form-group">
+					    	<label for="exampleFormControlInput1">Fecha de Fin </label>
+					    	<input type="date" name="fecha_fin" class="form-control" value="{{$periodo->fecha_fin}}">
+					  	</div>
                         
                         </div>
                         <div class="modal-footer  ">

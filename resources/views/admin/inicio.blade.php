@@ -38,7 +38,10 @@
                                         <a class="btn btn-outline-primary  btn-lg" role="button"  href="{{ url('/reserva') }}">
                                             {{-- <img src="{{asset('img/contacto.png')}}" width="100"/><br> --}}
                                             <span class="label label-default">Reservas </span></a>
-                                    
+
+                                             <a class="btn btn-outline-success  btn-lg" role="button"  href="{{ url('/periodos') }}">
+                                            {{-- <img src="{{asset('img/contacto.png')}}" width="100"/><br> --}}
+                                            <span class="label label-default">Periodo </span></a>
                                     </div> 
                             </div> 
                     </div> 
