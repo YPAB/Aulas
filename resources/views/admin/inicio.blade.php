@@ -27,7 +27,7 @@
                                         {{--boton de redireccion a  Aulas --}}
                                         <a class="btn btn-outline-danger  btn-lg" role="button" href="{{ url('/aulas') }}">
                                             {{-- <img src="{{asset('img/nuevo.png')}}" width="100" /><br> --}}
-                                            <span class="label label-default">Aula <i class="fa fa-user" ></i> </span> </a> 
+                                            <span class="label label-default">Aula  </span> </a> 
                                             
                                         {{--boton de redireccion a  Edificio --}}
                                         <a class="btn btn-outline-warning  btn-lg" role="button" href="{{ url('/edificios') }}">
