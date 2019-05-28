@@ -56,7 +56,7 @@
                             @endif
                         @else
                           <li class="nav-item">  
-                                 <label for="" class="nav-link"> <i class="fa fa-user"></i> {{ Auth::user()->name }}</label>
+                                 <a href="{{url('/perfil')}}"  class="nav-link"> <i class="fa fa-user"></i> {{ Auth::user()->name }}</a>
                                   </li>
                             <li class="nav-item">  
                                 <a   href="{{url('/inicio')}}" class="nav-link"  role ="button" >
