@@ -60,7 +60,7 @@
 				<div class="col-12">
 						<label >Caracteristicas Del Aula</label>
 						<a class=" btn btn-sm btn-primary float-right" href="{{ route('caracteristicas.index') }}" >
-						<span class="fa fa-plus"></span>	Agregar Caracterticas 
+						<span class="fa fa-plus"></span>	Agregar Características 
 						</a>
 						<div class="form-check">
 							@if ($caracteristicas->count())
@@ -79,7 +79,7 @@
 
 				<div class="form-group">
 					<a class=" btn btn-light active float-right" href="{{ url('/aulas') }}"> Cancelar </a>
-					<button type="submit" class="btn btn-primary float-right">Enviar</butto>
+					<button type="submit" class="btn btn-primary float-right">Aceptar</butto>
 				</div>
 				
 			</form>

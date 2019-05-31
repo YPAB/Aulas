@@ -94,7 +94,7 @@
                             <div class="form-group row">
                             <label for="usuario" class="col-md-4 col-form-label text-md-center">Nombre del Edificio:</label>
                                 <div class="col-md-6">
-                            <input class="form-control " name="nombre" value="" type="text" placeholder="">
+                                <input class="form-control " name="nombre" type="text" placeholder="" value="{{ $edificio->nombre }}" required>
                                 </div>
                             </div>
                         
