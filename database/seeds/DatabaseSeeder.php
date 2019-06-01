@@ -16,7 +16,12 @@ class DatabaseSeeder extends Seeder
 
     // Los usuarios necesitarán los roles previamente generados
     $this->call(UserTableSeeder::class);
+<<<<<<< HEAD
     // Creacion de Todo de un Aula
     $this->call(TodoTableSeeder::class);
+=======
+    // Creacion de Caracteristicas de un Aula
+    $this->call(CaracteristicasTableSeeder::class);
+>>>>>>> 28f44ac65dc3be210dcc38c967d61c5d3af42025
     }
 }
