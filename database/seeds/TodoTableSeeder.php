@@ -65,7 +65,5 @@ class TodoTableSeeder extends Seeder
         $piso = new Piso();
         $piso->nombre = '3° Piso';
         $piso->save();
-
-     
     }
 }
