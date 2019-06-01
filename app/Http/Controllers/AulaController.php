@@ -98,9 +98,12 @@ class AulaController extends Controller
              return redirect(url('/aulas'));*/
 
         $aula = Aula::findOrFail($id);
-        $aula->nombre = $request->nombre;
-        $aula->save();
+        $aula->fill($request->all())->save();
 
+      // ------- Relacion post y las etiquetas ------
+         //con sync lo que digo es que se sincronice perfectamente la relacion entre post y etiquetas
+         //detach para eliminar la relacion---- sync es la combinacion perfecta entre attach y detach
+         $aula->caracteristicas()->sync($request->get('caracteristicas'));
         return redirect(url('/aulas'));
 
     }
