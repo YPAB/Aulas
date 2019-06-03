@@ -10,33 +10,36 @@
 					<h2>Crear Aula </h2>
 				</div>
 			
-					<div class="panel-body">
+		<div class="panel-body">
 						
-			<form action="{{route('aulas.store')}}" method="POST">
-				@csrf
+					<form action="{{route('aulas.store')}}" method="POST">
+						@csrf
 					  <div class="form-group">
 					    <label for="exampleFormControlInput1">Nombre del Aula </label>
 					    <input type="text" name="nombre" class="form-control" required>
 					  </div>
 					  
 					  <div class="form-group row">
-							 <div class="col-12">
+						 <div class="col-12">
 							<label for="exampleFormControlSelect1">Edificio</label>
 							<a class=" btn btn-sm btn-primary float-right" href="{{ route('edificios.create') }}" >
-						<span class="fa fa-plus"></span>	Agregar Edificio 
-						</a>
+								<span class="fa fa-plus"></span>	Agregar Edificio 
+							</a>
+						 
+					  
+					  
 					    <select class="form-control" name="edificio_id">
-							@if ($edificios->count())
+					    	 @if($edificios->count() > 0)
 								@foreach($edificios as $edificio)
-								 <option value="{{$edificio->id}}">{{ $edificio->nombre }}</option>
-							 @endforeach
-							 	@else
-									 <option value=""> -  </option>
-							@endif
+								<option value="{{ $edificio->id }}">{{ $edificio->nombre }}</option>
+							@endforeach
+							  @else
+           							No Record Found
+            				  @endif   
 					    </select>
-					   </div>
-					  </div>
 
+					  </div>
+					  </div>
 					  <div class="form-group row">
 							 <div class="col-12">
 							<label for="exampleFormControlSelect1">Piso</label>
@@ -44,9 +47,9 @@
 						<span class="fa fa-plus"></span>	Agregar Piso 
 						</a>
 					    <select class="form-control" name="piso_id">
-									@if ($pisos->count())
+							@if ($pisos->count())
 									@foreach($pisos as $piso)
-									 <option value="{{$piso->id}}">{{ $piso->nombre }}</option>
+									<option value="{{$piso->id}}">{{ $piso->nombre }}</option>
 									@endforeach
 										@else
 									 <option value=""> -  </option>
