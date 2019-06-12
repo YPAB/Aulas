@@ -79,9 +79,13 @@ class AulaController extends Controller
      */
     public function edit(Aula $aula)
     {
-        //
-    }
+              $aula = Aula::findOrFail($id);
+              $caracteristicas = Caracteristica::orderBy('nombre', 'ASC')->get(); 
+              $edificios = Edificio::orderBy('nombre', 'ASC')->get();
+              $pisos = Piso::all();
 
+        return view('aula.panel', compact('caracteristicas','edificios','pisos'));
+    }
     /**
      * Update the specified resource in storage.
      *

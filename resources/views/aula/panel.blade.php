@@ -91,8 +91,8 @@
 
 
 {{-- ***********************Modal de Edit********************************* --}}
-   	@foreach($aulas as $aula)
-               
+   
+              @foreach($aulas as $aula)
                 <div class="modal fade" id="edit{{ $aula->id }}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 
                 <div class="modal-dialog">
@@ -107,9 +107,10 @@
 					{{ csrf_field() }}
 					{{ method_field('PUT') }}
 					@csrf
+				
                         <div class="form-group">
 					    <label for="exampleFormControlInput1">Nombre del Aula </label>
-					    <input type="text" name="nombre" class="form-control" required>
+					    <input type="text" name="nombre" value="{{ $aula->nombre }}" class="form-control" required>
 					  </div>
 					  
 					  <div class="form-group row">
@@ -117,13 +118,9 @@
 							<label for="exampleFormControlSelect1">Edificio</label>
 					  
 					    <select class="form-control" name="edificio_id">
-					    	 @if($edificios->count() > 0)
-								@foreach($edificios as $edificio)
-								<option value="{{ $edificio->id }}">{{ $edificio->nombre }}</option>
-							@endforeach
-							  @else
-           							No Record Found
-            				  @endif   
+					    	
+							<option value="{{ $aula->edificio->id }}">{{ $aula->edificio->nombre }}</option>
+						 
 					    </select>
 
 					  </div>
@@ -131,14 +128,13 @@
 					  <div class="form-group row">
 							 <div class="col-12">
 							<label for="exampleFormControlSelect1">Piso</label>
+							
 					    <select class="form-control" name="piso_id">
-							@if ($pisos->count())
-									@foreach($pisos as $piso)
-									<option value="{{$piso->id}}">{{ $piso->nombre }}</option>
-									@endforeach
-										@else
-									 <option value=""> -  </option>
-							@endif
+							@foreach($pisos as $piso)
+								<option value="{{$piso->id}}">{{ $aula->piso->nombre }}</option>
+
+							@endforeach
+									 
 							</select>
 							
 							 </div>
@@ -148,27 +144,24 @@
 				<div class="col-12">
 						<label >Caracteristicas Del Aula</label>
 						<div class="form-check">
-							@if ($caracteristicas->count())
-								@foreach($caracteristicas as $caracteristica)	
-								<input class="form-check-input" type="checkbox" name="caracteristicas[]" value="{{$caracteristica->id}}">
-												<label class="form-check-label" for="defaultCheck1">	 
+							
+								@foreach($caracteristicas as $caracteristica)
+									
+								<input class="form-check-input" type="checkbox" name="caracteristicas[]" value="{{$caracteristica->id}}" checked="">
+									<label class="form-check-label" for="defaultCheck1">	 
 													{{ $caracteristica->nombre }}
-												</label><br/>
+									</label><br/>
 								@endforeach
-							@else
-								No hay caracteristica   
-							@endif
 						</div>
 				</div>
 			</div>
                         <div class="modal-footer  ">
 
-							<input type="submit" value="Actualizar " class="btn btn-info btn-lg" style="width: 100%;"></input>						
+							<input type="submit" value="Modificar Aula " class="btn btn-info btn-lg" style="width: 100%;"></input>						
 							 
                         </div>
                     </div>
-
-
+                    
 			</form> 
 				<!-- /.modal-content --> 
 			</div>
@@ -240,9 +233,6 @@
              </div>
 
 
-
-
-		@endforeach	
-
+@endforeach	
 
 @endsection
