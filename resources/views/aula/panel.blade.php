@@ -51,9 +51,7 @@
 											
 											
 											<td>{{ $aula->piso->nombre }}</td>
-											
 
-									
 										 <td width="10px">
 												<a href="#ver{{ $aula->id }}"  data-original-title="Editar Perfil"  title="Editar" class="btn btn-sm btn-default" data-toggle="modal" role ="button" > Ver</a>
 											</td>
@@ -69,8 +67,6 @@
 													
 												</td>
 										</tr>
-										
-
 
 										@endforeach
 									
@@ -107,9 +103,10 @@
 					{{ csrf_field() }}
 					{{ method_field('PUT') }}
 					@csrf
-                        <div class="form-group">
+					<div class="container">
+                        <div class="form-group ">
 					    <label for="exampleFormControlInput1">Nombre del Aula </label>
-					    <input type="text" name="nombre" class="form-control" required>
+					    <input type="text" name="nombre" class="form-control" value="{{ $aula->nombre }}" >
 					  </div>
 					  
 					  <div class="form-group row">
@@ -119,7 +116,7 @@
 					    <select class="form-control" name="edificio_id">
 					    	 @if($edificios->count() > 0)
 								@foreach($edificios as $edificio)
-								<option value="{{ $edificio->id }}">{{ $edificio->nombre }}</option>
+								<option value="{{ $edificio->nombre }}">{{ $edificio->nombre }}</option>
 							@endforeach
 							  @else
            							No Record Found
@@ -167,16 +164,17 @@
 							 
                         </div>
                     </div>
-
+				</div>
+		
 
 			</form> 
 				<!-- /.modal-content --> 
 			</div>
                     <!-- /.modal-dialog --> 
-			</div>
+			
 
 
-		</div>
+		
 
 		{{-- ***********************Modal de Delete********************************* --}}
          <div class="modal fade" id="delete{{ $aula->id }}" tabindex="-1" role="dialog" aria-labelledby="eliminar" aria-hidden="true">
