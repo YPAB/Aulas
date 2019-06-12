@@ -107,9 +107,10 @@
 					{{ csrf_field() }}
 					{{ method_field('PUT') }}
 					@csrf
+					<div class="container">
                         <div class="form-group">
 					    <label for="exampleFormControlInput1">Nombre del Aula </label>
-					    <input type="text" name="nombre" class="form-control" required>
+					    <input type="text" value="{{$aula->nombre}}" name="nombre" class="form-control" required>
 					  </div>
 					  
 					  <div class="form-group row">
@@ -117,13 +118,11 @@
 							<label for="exampleFormControlSelect1">Edificio</label>
 					  
 					    <select class="form-control" name="edificio_id">
-					    	 @if($edificios->count() > 0)
-								@foreach($edificios as $edificio)
+					    	<option value="{{ $aula->edificio->id }}">{{ $aula->edificio->nombre }}</option>
+								@foreach($edificios as $edificio) 
 								<option value="{{ $edificio->id }}">{{ $edificio->nombre }}</option>
 							@endforeach
-							  @else
-           							No Record Found
-            				  @endif   
+							 
 					    </select>
 
 					  </div>
@@ -132,13 +131,11 @@
 							 <div class="col-12">
 							<label for="exampleFormControlSelect1">Piso</label>
 					    <select class="form-control" name="piso_id">
-							@if ($pisos->count())
+								<option value="{{$aula->piso->id}}">{{ $aula->piso->nombre }}</option>
 									@foreach($pisos as $piso)
 									<option value="{{$piso->id}}">{{ $piso->nombre }}</option>
 									@endforeach
-										@else
-									 <option value=""> -  </option>
-							@endif
+							
 							</select>
 							
 							 </div>
@@ -148,16 +145,14 @@
 				<div class="col-12">
 						<label >Caracteristicas Del Aula</label>
 						<div class="form-check">
-							@if ($caracteristicas->count())
+						
 								@foreach($caracteristicas as $caracteristica)	
 								<input class="form-check-input" type="checkbox" name="caracteristicas[]" value="{{$caracteristica->id}}">
 												<label class="form-check-label" for="defaultCheck1">	 
 													{{ $caracteristica->nombre }}
 												</label><br/>
 								@endforeach
-							@else
-								No hay caracteristica   
-							@endif
+						
 						</div>
 				</div>
 			</div>
@@ -168,7 +163,7 @@
                         </div>
                     </div>
 
-
+                    </div>
 			</form> 
 				<!-- /.modal-content --> 
 			</div>
