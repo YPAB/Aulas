@@ -177,8 +177,6 @@
 				<!-- /.modal-content --> 
 			</div>
                     <!-- /.modal-dialog --> 
-			
-
 
 		
 
