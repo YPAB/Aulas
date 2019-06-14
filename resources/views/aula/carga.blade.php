@@ -61,7 +61,7 @@
  												
 			<div class="form-group row">
 				<div class="col-12">
-						<label >Caracteristicas Del Aula</label>
+						<label >Características Del Aula</label>
 						<a class=" btn btn-sm btn-primary float-right" href="{{ route('caracteristicas.index') }}" >
 						<span class="fa fa-plus"></span>	Agregar Características 
 						</a>
@@ -74,7 +74,7 @@
 												</label><br/>
 								@endforeach
 							@else
-								No hay caracteristica   
+								No hay característica   
 							@endif
 						</div>
 				</div>

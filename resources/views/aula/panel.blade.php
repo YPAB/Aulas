@@ -12,14 +12,14 @@
 					  <div class="col-md-3">
                         <button class="btn btn-sl btn-default">Buscar</button>
 					  </div>
-					 {{-- -------- Boton de Agregar Aula y Caracteristica -------- --}}
+					 {{-- -------- Boton de Agregar Aula y Característica -------- --}}
 					 <div class="col-md-4">
 						<a class=" btn btn-sl btn-primary float-right" href="{{ route('aulas.create') }}" >
 							Cargar Aula 
 						</a>
 					</div>
 						{{-- <a class=" btn btn-sl btn-primary float-right" href="{{ route('caracteristicas.index') }}" >
-							Agregar Caracterticas 
+							Agregar Características 
 						</a> --}}
 				</div>
 					<br> {{--  Enter Espacio --- titulo --}}
@@ -35,7 +35,7 @@
 									<th>Nombre del Aula</th>
 									<th >Edificio</th>
 									<th >Piso</th>
-									<th >Caracteristicas</th>
+									<th >Caracteristícas</th>
 									{{-- <th colspan="3">&nbsp;</th> --}}
 									<th >Editar</th>
 									<th >Eliminar</th>
@@ -143,7 +143,7 @@
  												
 			<div class="form-group row">
 				<div class="col-12">
-						<label >Caracteristicas Del Aula</label>
+						<label >Características Del Aula</label>
 						<div class="form-check">
 						
 								@foreach($caracteristicas as $caracteristica)	
@@ -209,7 +209,7 @@
                        	<table class="table table-striped table-hover">
 							<thead>
 								<tr>
-									<th>Caracteristicas del Aula</th>
+									<th>Características del Aula</th>
 									
 								</tr>
 							</thead>

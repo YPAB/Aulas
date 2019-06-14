@@ -7,10 +7,10 @@
 		<div class="col-md-6 col-md-offset-2">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					Listado de Caracteristicas
+					Listado de Características
 					
 						<a class=" btn btn-sm btn-primary float-right" href="{{ route('caracteristicas.create') }}" >
-							Agregar Caracterticas 
+							Agregar Características 
 						</a>
 
 				</div>
@@ -22,7 +22,7 @@
 
 								<tr>
 									<th>ID</th>
-									<th>Nombre de la Caracteristica</th>
+									<th>Nombre de la Característica</th>
 									
 									<th colspan="3">&nbsp;</th>
 								</tr>
