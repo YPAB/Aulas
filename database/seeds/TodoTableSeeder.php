@@ -1,8 +1,9 @@
 <?php
+use Illuminate\Database\Seeder;
 use App\Models\Caracteristica;
 use App\Models\Edificio;
 use App\Models\Piso;
-use Illuminate\Database\Seeder;
+
 
 class TodoTableSeeder extends Seeder
 {

@@ -18,6 +18,11 @@
 					    <label for="exampleFormControlInput1">Nombre del Aula </label>
 					    <input type="text" name="nombre" class="form-control" required>
 					  </div>
+
+					  <div class="form-group">
+					    <label for="exampleFormControlInput1">Capacidad </label>
+					    <input type="text" name="capacidad" class="form-control" required>
+					  </div>
 					  
 					  <div class="form-group row">
 						 <div class="col-12">

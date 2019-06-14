@@ -9,7 +9,7 @@ class Aula extends Model
    protected $table = 'aulas';
    protected $primaryKey = 'id';
     
-protected $fillable = ['edificio_id','piso_id','nombre'];
+protected $fillable = ['edificio_id','piso_id','nombre','capacidad'];
 
     public $timestamps = true;
 

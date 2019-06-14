@@ -18,6 +18,8 @@ class CreateAulasTable extends Migration
             $table->integer('piso_id')->unsigned();
             $table->integer('edificio_id')->unsigned();
             $table->string('nombre')->required();
+            $table->integer('capacidad')->required();
+
             $table->timestamps();
         });
     }

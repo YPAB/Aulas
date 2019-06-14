@@ -33,6 +33,7 @@
 							<thead>
 								<tr>
 									<th>Nombre del Aula</th>
+									<th>Capacidad</th>
 									<th >Edificio</th>
 									<th >Piso</th>
 									<th >Caracteristícas</th>
@@ -46,6 +47,8 @@
 									@foreach($aulas as $aula)
 										<tr>
 											<td>{{ $aula->nombre }}</td>
+
+											<td>{{ $aula->capacidad }}</td>
 
 											<td>{{ $aula->edificio->nombre }}</td>
 											
@@ -113,6 +116,12 @@
 					    <input type="text" value="{{$aula->nombre}}" name="nombre" class="form-control" required>
 					  </div>
 					  
+					  <div class="container">
+                        <div class="form-group">
+					    <label for="exampleFormControlInput1">Capacidad </label>
+					    <input type="text" value="{{$aula->capacidad}}" name="capacidad" class="form-control" required>
+					  </div>
+
 					  <div class="form-group row">
 						 <div class="col-12">
 							<label for="exampleFormControlSelect1">Edificio</label>
