@@ -53,6 +53,7 @@ class AulaController extends Controller
         $a->piso_id = $request->piso_id;
         $a->edificio_id = $request->edificio_id;
         $a->nombre = $request->nombre;
+        $a->capacidad = $request->capacidad;
         $a->save();
 
         $a->caracteristicas()->attach($request->get('caracteristicas'));

@@ -18,6 +18,11 @@
 					    <label for="exampleFormControlInput1">Nombre del Aula </label>
 					    <input type="text" name="nombre" class="form-control" required>
 					  </div>
+
+					  <div class="form-group">
+					    <label for="exampleFormControlInput1">Capacidad </label>
+					    <input type="text" name="capacidad" class="form-control" required>
+					  </div>
 					  
 					  <div class="form-group row">
 						 <div class="col-12">
@@ -61,9 +66,9 @@
  												
 			<div class="form-group row">
 				<div class="col-12">
-						<label >Caracteristicas Del Aula</label>
+						<label >Características Del Aula</label>
 						<a class=" btn btn-sm btn-primary float-right" href="{{ route('caracteristicas.index') }}" >
-						<span class="fa fa-plus"></span>	Agregar Caracterticas 
+						<span class="fa fa-plus"></span>	Agregar Características 
 						</a>
 						<div class="form-check">
 							@if ($caracteristicas->count())
@@ -74,7 +79,7 @@
 												</label><br/>
 								@endforeach
 							@else
-								No hay caracteristica   
+								No hay característica   
 							@endif
 						</div>
 				</div>
@@ -82,7 +87,7 @@
 
 				<div class="form-group">
 					<a class=" btn btn-light active float-right" href="{{ url('/aulas') }}"> Cancelar </a>
-					<button type="submit" class="btn btn-primary float-right">Enviar</butto>
+					<button type="submit" class="btn btn-primary float-right">Aceptar</butto>
 				</div>
 				
 			</form>

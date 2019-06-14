@@ -12,14 +12,14 @@
 					  <div class="col-md-3">
                         <button class="btn btn-sl btn-default">Buscar</button>
 					  </div>
-					 {{-- -------- Boton de Agregar Aula y Caracteristica -------- --}}
+					 {{-- -------- Boton de Agregar Aula y Característica -------- --}}
 					 <div class="col-md-4">
 						<a class=" btn btn-sl btn-primary float-right" href="{{ route('aulas.create') }}" >
 							Cargar Aula 
 						</a>
 					</div>
 						{{-- <a class=" btn btn-sl btn-primary float-right" href="{{ route('caracteristicas.index') }}" >
-							Agregar Caracterticas 
+							Agregar Características 
 						</a> --}}
 				</div>
 					<br> {{--  Enter Espacio --- titulo --}}
@@ -33,9 +33,10 @@
 							<thead>
 								<tr>
 									<th>Nombre del Aula</th>
+									<th>Capacidad</th>
 									<th >Edificio</th>
 									<th >Piso</th>
-									<th >Caracteristicas</th>
+									<th >Caracteristícas</th>
 									{{-- <th colspan="3">&nbsp;</th> --}}
 									<th >Editar</th>
 									<th >Eliminar</th>
@@ -46,6 +47,8 @@
 									@foreach($aulas as $aula)
 										<tr>
 											<td>{{ $aula->nombre }}</td>
+
+											<td>{{ $aula->capacidad }}</td>
 
 											<td>{{ $aula->edificio->nombre }}</td>
 											
@@ -107,20 +110,41 @@
 					{{ csrf_field() }}
 					{{ method_field('PUT') }}
 					@csrf
+<<<<<<< HEAD
 				
                         <div class="form-group">
 					    <label for="exampleFormControlInput1">Nombre del Aula </label>
 					    <input type="text" name="nombre" value="{{ $aula->nombre }}" class="form-control" required>
+=======
+					<div class="container">
+                        <div class="form-group">
+					    <label for="exampleFormControlInput1">Nombre del Aula </label>
+					    <input type="text" value="{{$aula->nombre}}" name="nombre" class="form-control" required>
+>>>>>>> master
 					  </div>
 					  
+					  <div class="container">
+                        <div class="form-group">
+					    <label for="exampleFormControlInput1">Capacidad </label>
+					    <input type="text" value="{{$aula->capacidad}}" name="capacidad" class="form-control" required>
+					  </div>
+
 					  <div class="form-group row">
 						 <div class="col-12">
 							<label for="exampleFormControlSelect1">Edificio</label>
 					  
 					    <select class="form-control" name="edificio_id">
+<<<<<<< HEAD
 					    	
 							<option value="{{ $aula->edificio->id }}">{{ $aula->edificio->nombre }}</option>
 						 
+=======
+					    	<option value="{{ $aula->edificio->id }}">{{ $aula->edificio->nombre }}</option>
+								@foreach($edificios as $edificio) 
+								<option value="{{ $edificio->id }}">{{ $edificio->nombre }}</option>
+							@endforeach
+							 
+>>>>>>> master
 					    </select>
 
 					  </div>
@@ -130,11 +154,19 @@
 							<label for="exampleFormControlSelect1">Piso</label>
 							
 					    <select class="form-control" name="piso_id">
+<<<<<<< HEAD
 							@foreach($pisos as $piso)
 								<option value="{{$piso->id}}">{{ $aula->piso->nombre }}</option>
 
 							@endforeach
 									 
+=======
+								<option value="{{$aula->piso->id}}">{{ $aula->piso->nombre }}</option>
+									@foreach($pisos as $piso)
+									<option value="{{$piso->id}}">{{ $piso->nombre }}</option>
+									@endforeach
+							
+>>>>>>> master
 							</select>
 							
 							 </div>
@@ -142,16 +174,27 @@
  												
 			<div class="form-group row">
 				<div class="col-12">
-						<label >Caracteristicas Del Aula</label>
+						<label >Características Del Aula</label>
 						<div class="form-check">
+<<<<<<< HEAD
 							
 								@foreach($caracteristicas as $caracteristica)
 									
 								<input class="form-check-input" type="checkbox" name="caracteristicas[]" value="{{$caracteristica->id}}" checked="">
 									<label class="form-check-label" for="defaultCheck1">	 
+=======
+						
+								@foreach($caracteristicas as $caracteristica)	
+								<input class="form-check-input" type="checkbox" name="caracteristicas[]" value="{{$caracteristica->id}}">
+												<label class="form-check-label" for="defaultCheck1">	 
+>>>>>>> master
 													{{ $caracteristica->nombre }}
 									</label><br/>
 								@endforeach
+<<<<<<< HEAD
+=======
+						
+>>>>>>> master
 						</div>
 				</div>
 			</div>
@@ -161,7 +204,12 @@
 							 
                         </div>
                     </div>
+<<<<<<< HEAD
                     
+=======
+
+                    </div>
+>>>>>>> master
 			</form> 
 				<!-- /.modal-content --> 
 			</div>
@@ -207,7 +255,7 @@
                        	<table class="table table-striped table-hover">
 							<thead>
 								<tr>
-									<th>Caracteristicas del Aula</th>
+									<th>Características del Aula</th>
 									
 								</tr>
 							</thead>
