@@ -96,7 +96,7 @@
 {{-- ***********************Modal de Edit********************************* --}}
    
               @foreach($aulas as $aula)
-                <div class="modal fade" id="edit{{ $aula->id }}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+             <div class="modal fade" id="edit{{ $aula->id }}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -110,18 +110,13 @@
 					{{ csrf_field() }}
 					{{ method_field('PUT') }}
 					@csrf
-<<<<<<< HEAD
+
 				
                         <div class="form-group">
 					    <label for="exampleFormControlInput1">Nombre del Aula </label>
 					    <input type="text" name="nombre" value="{{ $aula->nombre }}" class="form-control" required>
-=======
-					<div class="container">
-                        <div class="form-group">
-					    <label for="exampleFormControlInput1">Nombre del Aula </label>
-					    <input type="text" value="{{$aula->nombre}}" name="nombre" class="form-control" required>
->>>>>>> master
-					  </div>
+						</div>
+		
 					  
 					  <div class="container">
                         <div class="form-group">
@@ -134,17 +129,17 @@
 							<label for="exampleFormControlSelect1">Edificio</label>
 					  
 					    <select class="form-control" name="edificio_id">
-<<<<<<< HEAD
+
 					    	
 							<option value="{{ $aula->edificio->id }}">{{ $aula->edificio->nombre }}</option>
 						 
-=======
+
 					    	<option value="{{ $aula->edificio->id }}">{{ $aula->edificio->nombre }}</option>
 								@foreach($edificios as $edificio) 
 								<option value="{{ $edificio->id }}">{{ $edificio->nombre }}</option>
 							@endforeach
 							 
->>>>>>> master
+
 					    </select>
 
 					  </div>
@@ -154,19 +149,19 @@
 							<label for="exampleFormControlSelect1">Piso</label>
 							
 					    <select class="form-control" name="piso_id">
-<<<<<<< HEAD
+
 							@foreach($pisos as $piso)
 								<option value="{{$piso->id}}">{{ $aula->piso->nombre }}</option>
 
 							@endforeach
 									 
-=======
+
 								<option value="{{$aula->piso->id}}">{{ $aula->piso->nombre }}</option>
 									@foreach($pisos as $piso)
 									<option value="{{$piso->id}}">{{ $piso->nombre }}</option>
 									@endforeach
 							
->>>>>>> master
+
 							</select>
 							
 							 </div>
@@ -176,25 +171,17 @@
 				<div class="col-12">
 						<label >Características Del Aula</label>
 						<div class="form-check">
-<<<<<<< HEAD
-							
-								@foreach($caracteristicas as $caracteristica)
-									
-								<input class="form-check-input" type="checkbox" name="caracteristicas[]" value="{{$caracteristica->id}}" checked="">
-									<label class="form-check-label" for="defaultCheck1">	 
-=======
+ 
 						
 								@foreach($caracteristicas as $caracteristica)	
 								<input class="form-check-input" type="checkbox" name="caracteristicas[]" value="{{$caracteristica->id}}">
 												<label class="form-check-label" for="defaultCheck1">	 
->>>>>>> master
+
 													{{ $caracteristica->nombre }}
 									</label><br/>
 								@endforeach
-<<<<<<< HEAD
-=======
-						
->>>>>>> master
+
+
 						</div>
 				</div>
 			</div>
@@ -204,20 +191,19 @@
 							 
                         </div>
                     </div>
-<<<<<<< HEAD
+
                     
-=======
+
 
                     </div>
->>>>>>> master
 			</form> 
 				<!-- /.modal-content --> 
-			</div>
-                    <!-- /.modal-dialog --> 
-			</div>
-
-
 		</div>
+                    <!-- /.modal-dialog --> 
+	</div>
+
+
+</div>
 
 		{{-- ***********************Modal de Delete********************************* --}}
          <div class="modal fade" id="delete{{ $aula->id }}" tabindex="-1" role="dialog" aria-labelledby="eliminar" aria-hidden="true">
@@ -278,7 +264,7 @@
                     <!-- /.modal-content --> 
                 </div>
                     <!-- /.modal-dialog --> 
-             </div>
+         </div>
 
 
 @endforeach	

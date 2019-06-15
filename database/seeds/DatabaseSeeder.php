@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
     //      // Creacion de Todo de un Aula
-    $this->call(TodoTableSeeder::class);
+    //$this->call(TodoTableSeeder::class);
 
         // La creación de datos de roles debe ejecutarse primero
     $this->call(RoleTableSeeder::class);
