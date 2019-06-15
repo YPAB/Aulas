@@ -232,6 +232,7 @@
                     <!-- /.modal-dialog --> 
                 </div>
 
+{{-- ***********************Modal de Ver Caracteristicas ********************************* --}}
 
  <div class="modal fade" id="ver{{ $aula->id }}" tabindex="-1" role="dialog" aria-labelledby="eliminar" aria-hidden="true">
                 <div class="modal-dialog">
@@ -242,6 +243,7 @@
 							<thead>
 								<tr>
 									<th>Características del Aula</th>
+									<th>Descripcion</th>
 									
 								</tr>
 							</thead>
@@ -250,6 +252,7 @@
 							@foreach($aula->caracteristicas as $caracteristica)
 								<tr>
 									<td>{{ $caracteristica->nombre }}</td></br>
+									<td>{{ $caracteristica->descripcion }}</td></br>
 											
 								</tr>
 										

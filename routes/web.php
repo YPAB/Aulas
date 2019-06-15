@@ -25,12 +25,17 @@ Route::get('/home', function () {
 
 Route::get('/inicio', 'HomeController@index');
 
-
+//Aulas
 Route::resource('/aulas',  'AulaController');
 Route::put( '/aulas/editar/{id}', 'AulaController@update');
 Route::delete( '/aulas/eliminar/{id}', 'AulaController@destroy')->name("eliminaraula");
 
+
+//Caracteristicas
 Route::resource('/caracteristicas',  'CaracteristicaController');
+Route::put( '/caracteristicas/editar/{id}', 'CaracteristicaController@update');
+Route::delete( '/caracteristicas/eliminar/{id}', 'CaracteristicaController@destroy')->name("eliminarcaracteristica");
+
 
 
 //EDIFICIO

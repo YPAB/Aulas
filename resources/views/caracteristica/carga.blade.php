@@ -18,6 +18,11 @@
 					    <label for="exampleFormControlInput1">Nombre de la Caracteristica </label>
 					    <input type="text" name="nombre" class="form-control" required >
 					  </div>
+
+					  <div class="form-group">
+					    <label for="exampleFormControlInput1">Descripcion </label>
+					    <input type="text" name="descripcion" class="form-control" required >
+					  </div>
 					
 
 				<div class="form-group">

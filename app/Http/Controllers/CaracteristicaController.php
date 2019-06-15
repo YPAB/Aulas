@@ -40,7 +40,9 @@ class CaracteristicaController extends Controller
     {
        // $request->validate(['nombre' => 'required|exists:caracteristicas,nombre|alpha|max:255']);
 
-       $caracteristica = Caracteristica::create(['nombre' => $request['nombre']]);
+       $caracteristica = Caracteristica::create([
+                                                'nombre' => $request['nombre'],
+                                                'descripcion' => $request['descripcion']]);
          return redirect()->route('caracteristicas.index')
         ->with('info', 'Caracteristica de un Aula fue creada con exito');
 
@@ -53,7 +55,7 @@ class CaracteristicaController extends Controller
      * @param  \App\Models\Componente  $componente
      * @return \Illuminate\Http\Response
      */
-    public function show(Componente $componente)
+    public function show(Caracteristica $caracteristica)
     {
         //
     }
@@ -64,7 +66,7 @@ class CaracteristicaController extends Controller
      * @param  \App\Models\Componente  $componente
      * @return \Illuminate\Http\Response
      */
-    public function edit(Componente $componente)
+    public function edit(Caracteristica $caracteristica)
     {
         //
     }
@@ -76,9 +78,12 @@ class CaracteristicaController extends Controller
      * @param  \App\Models\Componente  $componente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Componente $componente)
+    public function update(Request $request, $id)
     {
-        //
+        $caracteristica = Caracteristica::findOrFail($id);
+        $caracteristica->fill($request->all())->save();
+
+         return redirect(url('/caracteristicas'));
     }
 
     /**
@@ -87,8 +92,10 @@ class CaracteristicaController extends Controller
      * @param  \App\Models\Componente  $componente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Componente $componente)
+    public function destroy($id)
     {
-        //
+        $caracteristica = Caracteristica::findOrFail( $id);
+        $caracteristica->delete();
+        return redirect(url( '/caracteristicas'))->with('status','La caracteristica fue eliminada con exito');
     }
 }
