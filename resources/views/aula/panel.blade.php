@@ -111,14 +111,14 @@
 					{{ method_field('PUT') }}
 					@csrf
 
-				
+					<div class="container">
                         <div class="form-group">
 					    <label for="exampleFormControlInput1">Nombre del Aula </label>
 					    <input type="text" name="nombre" value="{{ $aula->nombre }}" class="form-control" required>
 						</div>
 		
 					  
-					  <div class="container">
+					
                         <div class="form-group">
 					    <label for="exampleFormControlInput1">Capacidad </label>
 					    <input type="text" value="{{$aula->capacidad}}" name="capacidad" class="form-control" required>
