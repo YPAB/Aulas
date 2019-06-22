@@ -64,7 +64,7 @@
                             </li>
 
                              <li class="nav-item">
-                                <a   href="{{url('/reservas')}}" class="nav-link"  role ="button" >
+                                <a   href="{{url('/reservas')}}" class="nav-link"  role ="button" ><i class="fa fa-pencil-square-o"></i>
                                Reserva </a>
                             </li>
                             <li class="nav-item dropdown">
