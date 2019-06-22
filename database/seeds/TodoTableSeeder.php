@@ -12,29 +12,34 @@ class TodoTableSeeder extends Seeder
      *
      * @return void
      */
-   
+
     //
     public function run()
     {
         // Seeder Caracteristicas
         $caracteristica = new Caracteristica();
         $caracteristica->nombre = 'Proyector';
+        $caracteristica->descripcion = '-';
         $caracteristica->save();
 
         $caracteristica = new Caracteristica();
         $caracteristica->nombre = 'Aire Acondicionado';
+        $caracteristica->descripcion = '-';
         $caracteristica->save();
 
         $caracteristica = new Caracteristica();
         $caracteristica->nombre = 'Ventilador';
+        $caracteristica->descripcion = '-';
         $caracteristica->save();
 
         $caracteristica = new Caracteristica();
         $caracteristica->nombre = 'Pizarra';
+        $caracteristica->descripcion = '-';
         $caracteristica->save();
 
         $caracteristica = new Caracteristica();
         $caracteristica->nombre = 'Pizarron';
+        $caracteristica->descripcion = '-';
         $caracteristica->save();
 
         // Seeder Edificio

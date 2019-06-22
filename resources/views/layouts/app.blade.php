@@ -17,12 +17,12 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-    
+
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    
+
      <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-   
+
 
 </head>
 <body>
@@ -55,61 +55,45 @@
                                 </li>
                             @endif
                         @else
-                          <li class="nav-item">  
+                          <li class="nav-item">
                                  <a href="{{url('/perfil')}}"  class="nav-link"> <i class="fa fa-user"></i> {{ Auth::user()->name }}</a>
                                   </li>
-                            <li class="nav-item">  
+                            <li class="nav-item">
                                 <a   href="{{url('/inicio')}}" class="nav-link"  role ="button" >
-                                <i class="fa fa-home"></i> Inicio </a> 
+                                <i class="fa fa-home"></i> Inicio </a>
                             </li>
-                            <li class="nav-item">  
-                                <a   href="{{url('/aulas')}}" class="nav-link"  role ="button" >
-                               Aula </a> 
-                            </li>
-                            <li class="nav-item">  
-                                <a   href="{{url('/edificios')}}" class="nav-link"  role ="button" >
-                                 Edificio </a> 
-                            </li>
-                            <li class="nav-item">  
-                                <a   href="{{url('/pisos')}}" class="nav-link"  role ="button" >
-                                Piso </a> 
-                            </li>
-                            <li class="nav-item">  
-                                <a   href="{{url('/periodos')}}" class="nav-link"  role ="button" >
-                               Periodo </a> 
-                            </li>
-                             <li class="nav-item">  
+
+                             <li class="nav-item">
                                 <a   href="{{url('/reservas')}}" class="nav-link"  role ="button" >
-                               Reserva </a> 
+                               Reserva </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa fa-cog"></i>  Configuración <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a   href="{{url('/aulas')}}" class="dropdown-item"  role ="button" >
+                                        Aula </a><hr>
+                                    <a   href="{{url('/edificios')}}" class="dropdown-item"  role ="button" >
+                                        Edificio </a><hr>
+                                    <a   href="{{url('/pisos')}}" class="dropdown-item"  role ="button" >
+                                        Piso </a><hr>
+                                    <a   href="{{url('/periodos')}}" class="dropdown-item"  role ="button" >
+                                    Periodo </a>
+
+                                </div>
                             </li>
                              <li class="nav-item">
-                                   
-                                <a   href="{{ route('logout') }}" class="nav-link"  role ="button" 
+
+                                <a   href="{{ route('logout') }}" class="nav-link"  role ="button"
                                 onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        <i class="fa fa-power-off"></i> {{ __('Salir') }}</a> 
+                                        <i class="fa fa-power-off"></i> {{ __('Salir') }}</a>
                                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
-                                    </form> 
-                            </li>
-                            {{-- <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Salir') }}
-                                    </a>
-                                    
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
                                     </form>
-                                </div>
-                            </li> --}}
+                            </li>
+
                         @endguest
                     </ul>
                 </div>
