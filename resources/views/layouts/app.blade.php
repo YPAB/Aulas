@@ -72,15 +72,14 @@
                                     <i class="fa fa-cog"></i>  Configuración <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a   href="{{url('/aulas')}}" class="dropdown-item"  role ="button" >
-                                        Aula </a><hr>
-                                    <a   href="{{url('/edificios')}}" class="dropdown-item"  role ="button" >
-                                        Edificio </a><hr>
-                                    <a   href="{{url('/pisos')}}" class="dropdown-item"  role ="button" >
-                                        Piso </a><hr>
-                                    <a   href="{{url('/periodos')}}" class="dropdown-item"  role ="button" >
-                                    Periodo </a>
-
+                                    <a href="{{url('/aulas')}}" class="dropdown-item"  role ="button" >
+                                        Aula</a><hr>
+                                    <a href="{{url('/edificios')}}" class="dropdown-item"  role ="button" >
+                                        Edificio</a><hr>
+                                    <a href="{{url('/pisos')}}" class="dropdown-item"  role ="button" >
+                                        Piso</a><hr>
+                                    <a href="{{url('/periodos')}}" class="dropdown-item"  role ="button" >
+                                    Periodo</a>
                                 </div>
                             </li>
                              <li class="nav-item">
