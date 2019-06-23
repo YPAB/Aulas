@@ -174,10 +174,13 @@
  
 						
 								@foreach($caracteristicas as $caracteristica)	
-								<input class="form-check-input" type="checkbox" name="caracteristicas[]" value="{{$caracteristica->id}}">
-												<label class="form-check-label" for="defaultCheck1">	 
-
-													{{ $caracteristica->nombre }}
+								<input class="form-check-input" type="checkbox" name="caracteristicas[]"
+									@if ($aula->caracteristicas->has($caracteristica->id))
+										checked = "checked"									
+									@endif 
+								value="{{$caracteristica->id}}">
+									<label class="form-check-label" for="defaultCheck1">	 
+										{{ $caracteristica->nombre }}
 									</label><br/>
 								@endforeach
 
